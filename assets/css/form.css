@@ -1,0 +1,98 @@
+:root {
+  --primary: hsl(115, 84%, 54%);
+  --txt: hsl(0, 0%, 0%);
+  --bg: hsl(0, 0%, 80%);
+  --bg-alt: hsl(0, 0%, 88%);
+  --purple: hsl(240, 90%, 72%);
+  --neutral: hsl(0, 0%, 92%);
+  --lgpurple: hsl(260, 80%, 80%);
+  --bg-primary: hsl(240, 18%, 12%);
+}
+
+body {
+  background: var(--bg-primary);
+  font-family: Arial, sans-serif;
+  color: var(--txt);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  padding: 2rem;
+  border-radius: 18px;
+  border: 2px solid var(--purple);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+form h2 {
+  color: var(--bg);
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--bg);
+  text-align: left;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--purple);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--txt);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--purple);
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background: var(--lgpurple);
+  color: var(--txt);
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: var(--primary);
+}
+
+/* Media Query para telas de até 320px */
+@media (max-width: 320px) {
+  .form-container {
+    padding: 1rem;
+    box-shadow: none;
+    border-radius: 4px;
+    margin: 1rem;
+  }
+
+  input,
+  textarea {
+    padding: 0.25rem;
+  }
+
+  button {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  form h2 {
+    font-size: 1.5rem;
+  }
+}

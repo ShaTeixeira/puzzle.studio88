@@ -1,0 +1,186 @@
+:root {
+  --primary: hsl(115, 84%, 54%);
+  --txt: hsl(0, 0%, 0%);
+  --bg: hsl(0, 0%, 80%);
+  --bg-alt: hsl(0, 0%, 88%);
+  --purple: hsl(240, 90%, 72%);
+  --neutral: hsl(0, 0%, 92%);
+  --lgpurple: hsl(260, 80%, 80%);
+  --bg-primary: hsl(240, 18%, 12%);
+}
+/* 
+Green: hsl(115, 84%, 54%)
+White: hsl(0, 0%, 100%)
+Purple: hsl(240, 90%, 72%)
+Light Purple: hsl(260, 80%, 80%)
+Dark Blue: hsl(240, 18%, 12%)
+Off Black: hsl(0, 0%, 0%) 
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--bg-primary);
+}
+/* Profile */
+.wrapper-profile {
+  display: grid;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  text-align: center;
+  color: var(--neutral);
+}
+.wrapper-profile .photo {
+  border-radius: 50%;
+  width: 7rem;
+  margin: 1rem auto 1rem;
+  border: 2px solid var(--lgpurple);
+}
+.wrapper-profile .name {
+  font: 400 2rem/100% "Black Ops One", Arial, sans-serif;
+  text-transform: uppercase;
+}
+.wrapper-profile .profession {
+  font: 700 1.25rem/100% "Inter", Arial, sans-serif;
+  text-transform: uppercase;
+}
+/* Links */
+.wrapper-links {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  padding: 2rem 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper-links .btn-link {
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  color: var(--neutral);
+  text-align: center;
+  font: 700 1rem/100% "Inter", Arial, sans-serif;
+  border-radius: 0.5rem;
+  border: 2px solid var(--purple);
+}
+/* 
+.wrapper-links .btn-link:hover {
+  border: 2px solid var(--purple);
+  background: var(--lgpurple);
+  color: var(--txt)
+} 
+*/
+/* Social Links */
+.wrapper-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.wrapper-social-links .social-link {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 2px solid var(--lgpurple);
+  border-radius: 8px;
+
+  font-size: 1.5rem;
+  color: var(--lgpurple);
+  text-decoration: none;
+}
+.wrapper-social-links .social-link span {
+  color: var(--lgpurple);
+  font-size: 12px;
+  font-weight: 600;
+}
+/* Footer */
+.wrapper-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+
+  padding: 1rem 0;
+
+  text-align: center;
+  font: 600 0.875rem/100% "Inter", Arial, sans-serif;
+  color: var(--primary);
+}
+hr {
+  border: none; /* Remove a borda padrão */
+  height: 2px; /* Define a altura da linha */
+  background-image: linear-gradient(to right, var(--purple), var(--lgpurple), var(--primary)); /* Gradiente de cores */
+  margin: 1rem 0; /* Adiciona espaço acima e abaixo da linha */
+}
+
+/* Media Query para telas de até 320px */
+@media (max-width: 320px) {
+  .wrapper-profile .photo {
+    width: 5rem;
+    margin: 0.5rem auto;
+  }
+
+  .wrapper-profile .name {
+    font-size: 1.5rem;
+  }
+
+  .wrapper-profile .profession {
+    font-size: 1rem;
+  }
+  .wrapper-links {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1rem;
+    padding: 2rem 0;
+    margin: 0 2rem;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .wrapper-links .btn-link {
+    display: block; /* Garante que cada link ocupe uma linha inteira */
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: var(--neutral);
+    text-align: center;
+    font: 700 1rem/100% "Inter", Arial, sans-serif;
+    border-radius: 0.5rem;
+    border: 2px solid var(--purple);
+  }
+  
+  .wrapper-social-links {
+    display: grid; /* Muda de flex para grid para facilitar a organização vertical */
+    justify-content: center; /* Alinha ao centro */
+    gap: 1rem; /* Espaçamento entre os elementos */
+    padding: 1rem 0;
+  }
+  
+  .wrapper-social-links .social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border: 2px solid var(--lgpurple);
+    border-radius: 8px;
+    font-size: 1.5rem;
+    color: var(--lgpurple);
+    text-decoration: none;
+    margin: 0 auto; /* Centraliza o link */
+  }
+
+  .wrapper-footer {
+    font-size: 0.75rem;
+  }
+}

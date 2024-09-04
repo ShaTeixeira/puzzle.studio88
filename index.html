@@ -1,61 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/images/favicon-32x32.png"
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
     />
 
-    <title>Puzzle Studio | Social links profile</title>
-    <meta name="description" content="Explore the profile of Puzzle Studio" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="preload" href="./assets/css/style.css" as="style" />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <title>Puzzle Studio | Linktree</title>
   </head>
 
   <body>
-    <main>
-      <header>
-        <img src="./assets/puzzle.png" class="logo" alt="Logo" />
-        <h1>Puzzle Studio</h1>
-        <p id="location">Serra, ES - Brasil</p>
-        <p id="tagline">
-          Unindo ideias, peça por peça: Puzzle, onde cada mente se encaixa!
-        </p>
-      </header>
+    <div class="container">
+      <div class="wrapper-profile">
+        <img
+          class="photo"
+          src="./assets/imgs/puzzle.png"
+          alt="Foto Puzzle Studio"
+        />
+        <p class="name">Puzzle Studio</p>
+        <p class="profession">Empresa</p>
+      </div>
+      <ul class="wrapper-links">
+        <li>
+          <a
+            href="./form.html"
+            target="_blank"
+            class="btn-link"
+          >
+            Solicite um orçamento
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://reserva.ink/puzzlestore"
+            target="_blank"
+            class="btn-link"
+          >
+            Compre na Puzzle Store + Reserva Ink
+          </a>
+        </li>
+      </ul>
 
-      <div id="social">
-        <a href="" target="_blank">
-          <img src="./assets/1.png" alt="" />
+      <hr> 
+      
+      <div class="wrapper-social-links">
+        <a
+          class="social-link"
+          href="https://github.com/ShaTeixeira"
+          target="_blank"
+        >
+          <ion-icon name="logo-github"></ion-icon>
+          <span>@ShaTeixeira</span>
         </a>
-
-        <a href="https://reserva.ink/puzzlestore" target="_blank">
-          <img src="./assets/6.png" alt="" />
+        <a
+          class="social-link"
+          href="https://github.com/mateusmattos1"
+          target="_blank"
+        >
+          <ion-icon name="logo-github">@mateusmattos1</ion-icon>
+        <span>@mateusmattos1</span>
         </a>
-
-        <a href="https://github.com/ShaTeixeira" target="_blank">
-          <img src="./assets/2.png" alt="" />
+        <a
+          class="social-link"
+          href="https://www.instagram.com/puzzle.studio88/"
+          target="_blank"
+        >
+          <ion-icon name="logo-instagram"></ion-icon>
+          <span>@puzzle.studio88</span>
         </a>
-
-        <a href="https://github.com/mateusmattos1" target="_blank">
-          <img src="./assets/3.png" alt="" />
+        <a
+          class="social-link"
+          href="https://www.linkedin.com/company/puzzle-studio88/"
+          target="_blank"
+        >
+          <ion-icon name="logo-linkedin"></ion-icon>
+          <span>Puzzle Studio</span>
         </a>
-
-        <a href="https://www.linkedin.com/in/shayane-teixeira-cruz/" target="_blank">
-          <img src="./assets/4.png" alt="" />
+        <a
+          class="social-link"
+          href="https://www.linkedin.com/in/mateus-de-mattos-ferreira/"
+          target="_blank"
+        >
+          <ion-icon name="logo-linkedin"></ion-icon>
+          <span>LinkedIn - Mateus</span>
         </a>
-
-        <a href="https://www.linkedin.com/in/mateus-de-mattos-ferreira/" target="_blank">
-          <img src="./assets/5.png" alt="" />
-        </a>
-
-        <a href="https://www.instagram.com/puzzle.studio88/" target="_blank">
-          <img src="./assets/7.png" alt="" />
+        <a
+          class="social-link"
+          href="https://www.linkedin.com/in/shayane-teixeira-cruz/"
+          target="_blank"
+        >
+          <ion-icon name="logo-linkedin"></ion-icon>
+          <span>LinkedIn - Shayane</span>
         </a>
       </div>
-    </main>
+      <footer class="wrapper-footer">
+        <p>
+          ©<span class="footer-year">2024</span> - Puzzle Studio - Todos os
+          direitos reservados.
+        </p>
+      </footer>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
