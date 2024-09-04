@@ -42,8 +42,9 @@ Off Black: hsl(0, 0%, 0%)
   text-transform: uppercase;
 }
 .wrapper-profile .profession {
-  font: 700 1.25rem/100% "Inter", Arial, sans-serif;
-  text-transform: uppercase;
+  font: 400 1rem/100% "Inter", Arial, sans-serif;
+  margin-top: .75rem;
+ /*  text-transform: uppercase; */
 }
 /* Links */
 .wrapper-links {
