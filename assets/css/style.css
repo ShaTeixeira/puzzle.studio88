@@ -125,7 +125,7 @@ hr {
 }
 
 /* Media Query para telas de até 320px */
-@media (max-width: 320px) {
+@media (max-width: 420px) {
   .wrapper-profile .photo {
     width: 5rem;
     margin: 0.5rem auto;
