@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notícia - Puzzle Studio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+  </head>
+  <body class="bg-violet-100">
+    <!-- Header -->
+    <header class="bg-[#191923] shadow-md py-5">
+      <div class="container mx-auto flex justify-between items-center px-6">
+        <h1 class="text-2xl font-bold text-white">Puzzle Studio</h1>
+        <nav>
+          <a href="index.html" class="text-white px-4">Home</a>
+          <a href="noticias.html" class="text-white px-4">Notícias</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Notícia -->
+    <section class="container mx-auto py-16 px-6">
+      <div
+        id="noticia"
+        class="bg-white p-6 rounded-lg shadow-lg max-w-3xl mx-auto"
+      >
+        <img
+          id="noticiaImagem"
+          class="w-full h-60 object-cover rounded-md mb-4"
+          src="./assets/news/news2.jpg"
+          alt="Imagem da notícia"
+        />
+        <h2 id="noticiaTitulo" class="text-3xl font-bold mb-4">
+          DeepMind estaria restringindo publicação de pesquisas para preservar
+          vantagem competitiva
+        </h2>
+        <p id="noticiaDescricao" class="text-gray-600 leading-relaxed">
+          DeepMind estaria restringindo publicação de pesquisas para preservar
+          vantagem competitiva Segundo relatos de cientistas atuais e antigos da
+          empresa, ela tem adotado medidas mais rigorosas para a aprovação e
+          publicação de pesquisas sobre IA. Ex-pesquisadores afirmam que a
+          companhia tem evitado divulgar estudos que possam expor inovações
+          exploráveis por concorrentes ou que coloquem o modelo Gemini, do
+          Google, em desvantagem frente a rivais. Entre as novas diretrizes, a
+          empresa implementou um embargo de seis meses para artigos considerados
+          “estratégicos” relacionados à IA generativa. Uma fonte próxima à
+          DeepMind afirma que as mudanças visam evitar que pesquisadores
+          desperdicem tempo em estudos que não seriam aprovados por razões
+          estratégicas ou competitivas. Ela também acrescenta que a empresa
+          continua publicando centenas de artigos anualmente. No entanto,
+          ex-funcionários apontam que as novas restrições dificultam a
+          divulgação de pesquisas comercialmente sensíveis. Um deles afirma que
+          publicar estudos sobre IA generativa tornou-se “quase impossível”. Em
+          um caso específico, a DeepMind teria impedido a publicação de uma
+          pesquisa que sugeria que o Gemini era menos capaz ou seguro do que
+          concorrentes como o GPT-4, da OpenAI. Por outro lado, a empresa também
+          teria bloqueado um artigo que apontava vulnerabilidades no ChatGPT,
+          temendo que a divulgação fosse interpretada como um ataque direto à
+          rival. Uma fonte próxima à empresa afirma que a DeepMind não impede a
+          publicação de artigos sobre falhas de segurança e segue uma política
+          de “divulgação responsável”, permitindo que empresas corrijam
+          problemas antes que as vulnerabilidades sejam tornadas públicas. Ainda
+          assim, o endurecimento das regras gerou insatisfação interna, já que o
+          sucesso na empresa sempre esteve atrelado à publicação de artigos
+          científicos de prestígio. Pessoas próximas ao assunto indicam que as
+          novas políticas de revisão contribuíram para algumas demissões. A
+          DeepMind declara estar “comprometida com o avanço da pesquisa em IA” e
+          afirma que suas políticas estão sendo atualizadas para garantir que
+          suas equipes continuem publicando e contribuindo para o ecossistema
+          acadêmico. Fonte:
+          <a
+            href="https://arstechnica.com/ai/2025/04/deepmind-is-holding-back-release-of-ai-research-to-give-google-an-edge/"
+            >Saiba mais</a
+          >
+        </p>
+        <button
+          onclick="voltar()"
+          class="mt-6 bg-blue-500 text-white px-4 py-2 rounded-lg"
+        >
+          Voltar
+        </button>
+      </div>
+    </section>
+
+    <script>
+      // Função para voltar à página anterior
+      function voltar() {
+        window.history.back();
+      }
+    </script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

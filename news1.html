@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notícia - Puzzle Studio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+  </head>
+  <body class="bg-violet-100">
+    <!-- Header -->
+    <header class="bg-[#191923] shadow-md py-5">
+      <div class="container mx-auto flex justify-between items-center px-6">
+        <h1 class="text-2xl font-bold text-white">Puzzle Studio</h1>
+        <nav>
+          <a href="index.html" class="text-white px-4">Home</a>
+          <a href="noticias.html" class="text-white px-4">Notícias</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Notícia -->
+    <section class="container mx-auto py-16 px-6">
+      <div
+        id="noticia"
+        class="bg-white p-6 rounded-lg shadow-lg max-w-3xl mx-auto"
+      >
+        <img
+          id="noticiaImagem"
+          class="w-full h-60 object-cover rounded-md mb-4"
+          src="./assets/news/news1.jpg"
+          alt="Imagem da notícia"
+        />
+        <h2 id="noticiaTitulo" class="text-3xl font-bold mb-4">
+          Microsoft expande recursos exclusivos de PCs Copilot+ com Snapdragon X
+          Series para processadores AMD e Intel
+        </h2>
+        <p id="noticiaDescricao" class="text-gray-600 leading-relaxed">
+          A Mozilla está desenvolvendo um novo conjunto de serviços
+          profissionais denominado Thunderbird Pro. De acordo com Ryan Sipes,
+          diretor administrativo da empresa, o plano será inicialmente oferecido
+          gratuitamente para “colaboradores consistentes da comunidade”,
+          enquanto os demais usuários terão acesso mediante pagamento. A longo
+          prazo, caso a plataforma atinja uma base sustentável de usuários, a
+          Mozilla poderá introduzir versões gratuitas com funcionalidades
+          limitadas. O Thunderbird Pro busca ser uma alternativa totalmente de
+          código aberto, priorizando a liberdade do usuário e oferecendo uma
+          experiência integrada. O pacote incluirá os seguintes serviços:
+          Thunderbird Appointment: ferramenta de agendamento que permite o envio
+          de convites para eventos de calendário por meio de links. Thunderbird
+          Send: sucessor do Firefox Send, serviço de compartilhamento de
+          arquivos desativado pela Mozilla em 2020. Thunderbird Assist: serviço
+          experimental de IA ainda em desenvolvimento, que oferecerá
+          processamento em nuvem via Flower AI, além da possibilidade de rodar
+          modelos localmente em dispositivos mais potentes. Thundermail: novo
+          serviço de e-mail independente do cliente Thunderbird para desktop.
+          Fonte:
+          <a
+            href="https://www.techspot.com/news/107366-thunderbird-email-client-venturing-new-pro-tier-commercial.html"
+            >Saiba mais</a
+          >
+        </p>
+        <button
+          onclick="voltar()"
+          class="mt-6 bg-blue-500 text-white px-4 py-2 rounded-lg"
+        >
+          Voltar
+        </button>
+      </div>
+    </section>
+
+    <script>
+      // Função para voltar à página anterior
+      function voltar() {
+        window.history.back();
+      }
+    </script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
