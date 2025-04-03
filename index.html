@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Puzzle Studio | Landing Pages Profissionais</title>
 
-    <link rel="icon" href="./assets/imgs/logo.png" type="image/png" sizes="16x16">
+    <link
+      rel="icon"
+      href="./assets/imgs/logo.png"
+      type="image/png"
+      sizes="16x16"
+    />
 
     <!-- Preload de fontes e links -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,25 +19,49 @@
       href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Inter:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+
+    <style>
+      @media (max-width: 768px) {
+        nav {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
   </head>
 
-  <body class="bg-violet-100">
-
+  <body class="bg-violet-200">
     <!-- Header -->
-    <header class="bg-[#223] shadow-md py-5">
+    <header class="bg-[#223] shadow-md py-5 relative">
       <div class="container mx-auto flex justify-between items-center px-6">
         <h1 class="text-2xl font-bold text-white">Puzzle Studio</h1>
-        <nav>
+    
+        <!-- Botão de Menu Hamburguer -->
+        <button id="menu-btn" class="md:hidden text-white text-3xl focus:outline-none">
+          ☰
+        </button>
+    
+        <!-- Menu de Navegação -->
+        <nav id="mobile-menu" class="hidden md:flex flex-col items-center md:flex-row gap-4 absolute md:relative top-16 left-0 bg-[#223] w-full md:w-auto md:bg-transparent md:top-0 md:left-auto p-6 md:p-0 transition-all duration-300">
           <a href="index.html" class="text-white px-4">Home</a>
           <a href="noticias.html" class="text-white px-4">Notícias</a>
-          <a href="#planos" class="bg-violet-200 text-black px-4 py-2 rounded-lg">Ver Planos</a>
+          <a href="#planos" class="bg-violet-200 text-black px-4 py-2 rounded-lg text-sm md:text-base font-semibold block md:inline-block">
+            Ver Planos
+          </a>
         </nav>
       </div>
     </header>
+    
+
 
     <!-- Chamada para Notícias -->
     <section class="bg-[#38ec28] py-4 text-center">
-      <p class="text-lg font-semibold text-gray-800">📰 Confira as últimas notícias do dia! <a href="noticias.html" class="text-blue-600 underline">Clique aqui</a> para ler.</p>
+      <p class="text-lg font-semibold text-gray-800">
+        📰 Confira as últimas notícias do dia!
+        <a href="noticias.html" class="text-blue-600 underline">Clique aqui</a>
+        para ler.
+      </p>
     </section>
 
     <!-- Perfil e Links -->
@@ -44,18 +73,33 @@
           alt="Foto Puzzle Studio"
         />
         <p class="name text-3xl font-bold mt-4">Puzzle Studio</p>
-        <p class="profession text-lg text-gray-600">Unindo ideias, peça por peça: Puzzle, onde cada mente se encaixa!</p>
+        <p class="profession text-lg text-gray-600">
+          Unindo ideias, peça por peça: Puzzle, onde cada mente se encaixa!
+        </p>
       </div>
 
       <ul class="wrapper-links space-y-4">
         <li>
-          <a href="./form.html" target="_blank" class="bg-[#7a7afc] text-white px-6 py-3 rounded-lg">Solicite agora o seu orçamento</a>
+          <a
+            href="./form.html"
+            target="_blank"
+            class="bg-[#7a7afc] text-white px-6 py-3 rounded-lg"
+            >Solicite agora o seu orçamento</a
+          >
         </li>
         <br />
         <li>
-          <a href="https://pay.kiwify.com.br/VbJmFpE" target="_blank" class="bg-[#7a7afc] text-white px-6 py-3 rounded-lg">Guia de React</a>
+          <a
+            href="https://pay.kiwify.com.br/VbJmFpE"
+            target="_blank"
+            class="bg-[#7a7afc] text-white px-6 py-3 rounded-lg"
+            >Guia de React</a
+          >
         </li>
-        <p class="text-sm mt-4">Em breve teremos mais atualizações do conteúdo, então corre para garantir!</p>
+        <p class="text-sm mt-4">
+          Em breve teremos mais atualizações do conteúdo, então corre para
+          garantir!
+        </p>
       </ul>
     </div>
 
@@ -64,22 +108,38 @@
     <!-- Planos de Landing Pages -->
     <section id="planos" class="py-16 bg-secondary-color">
       <div class="container mx-auto px-6 text-center">
-        <h3 class="text-3xl font-bold mb-8">Planos de Landing Pages Profissionais</h3>
+        <h3 class="text-3xl font-bold mb-8">
+          Planos de Landing Pages Profissionais
+        </h3>
         <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-light-bg p-6 rounded-lg shadow-lg">
             <h4 class="text-2xl font-bold mb-3">Básico</h4>
             <p class="text-gray-600 mb-6">Landing page simples e eficiente.</p>
-            <a href="./form.html?plano=basico" class="bg-[#7a7afc] text-white px-4 py-2 rounded-lg">Solicitar Orçamento</a>
+            <a
+              href="./form.html?plano=basico"
+              class="bg-[#7a7afc] text-white px-4 py-2 rounded-lg"
+              >Solicitar Orçamento</a
+            >
           </div>
           <div class="bg-[#191923] p-6 rounded-lg shadow-lg text-white">
             <h4 class="text-2xl font-bold mb-3">Profissional</h4>
             <p class="mb-6">Landing page com integrações e SEO otimizado.</p>
-            <a href="./form.html?plano=profissional" class="bg-[#7a7afc] text-white px-4 py-2 rounded-lg">Solicitar Orçamento</a>
+            <a
+              href="./form.html?plano=profissional"
+              class="bg-[#7a7afc] text-white px-4 py-2 rounded-lg"
+              >Solicitar Orçamento</a
+            >
           </div>
           <div class="bg-light-bg p-6 rounded-lg shadow-lg">
             <h4 class="text-2xl font-bold mb-3">Personalizado</h4>
-            <p class="text-gray-600 mb-6">Landing page customizada para sua necessidade.</p>
-            <a href="./form.html?plano=personalizado" class="bg-[#7a7afc]  text-white px-4 py-2 rounded-lg">Solicitar Orçamento</a>
+            <p class="text-gray-600 mb-6">
+              Landing page customizada para sua necessidade.
+            </p>
+            <a
+              href="./form.html?plano=personalizado"
+              class="bg-[#7a7afc] text-white px-4 py-2 rounded-lg"
+              >Solicitar Orçamento</a
+            >
           </div>
         </div>
       </div>
@@ -91,19 +151,35 @@
     <div class="wrapper-social-links text-center py-8 text-black">
       <h2>Redes Sociais</h2>
       <br />
-      <a href="https://github.com/ShaTeixeira" target="_blank" class="social-link text-sm mb-4 block">
+      <a
+        href="https://github.com/ShaTeixeira"
+        target="_blank"
+        class="social-link text-sm mb-4 block"
+      >
         <ion-icon name="logo-github"></ion-icon>
         <span>@ShaTeixeira</span>
       </a>
-      <a href="https://www.instagram.com/puzzle.studio88/" target="_blank" class="social-link text-sm mb-4 block">
+      <a
+        href="https://www.instagram.com/puzzle.studio88/"
+        target="_blank"
+        class="social-link text-sm mb-4 block"
+      >
         <ion-icon name="logo-instagram"></ion-icon>
         <span>@puzzle.studio88</span>
       </a>
-      <a href="https://www.linkedin.com/company/puzzle-studio88/" target="_blank" class="social-link text-sm mb-4 block">
+      <a
+        href="https://www.linkedin.com/company/puzzle-studio88/"
+        target="_blank"
+        class="social-link text-sm mb-4 block"
+      >
         <ion-icon name="logo-linkedin"></ion-icon>
         <span>Puzzle Studio</span>
       </a>
-      <a href="https://www.linkedin.com/in/shayane-teixeira-cruz/" target="_blank" class="social-link text-sm mb-4 block">
+      <a
+        href="https://www.linkedin.com/in/shayane-teixeira-cruz/"
+        target="_blank"
+        class="social-link text-sm mb-4 block"
+      >
         <ion-icon name="logo-linkedin"></ion-icon>
         <span>LinkedIn - Shayane</span>
       </a>
@@ -116,8 +192,14 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

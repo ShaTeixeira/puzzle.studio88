@@ -17,86 +17,47 @@
       rel="stylesheet"
     />
   </head>
-  <body class="bg-violet-100">
+  <body class="bg-violet-200">
     <header class="bg-[#191923] shadow-md py-5">
       <div class="container mx-auto flex justify-between items-center px-6">
         <h1 class="text-2xl font-bold text-white">Puzzle Studio</h1>
         <nav>
           <a href="index.html" class="text-white px-4">Home</a>
           <a href="noticias.html" class="text-white px-4">Notícias</a>
-          <a
-            href="#planos"
-            class="bg-violet-200 text-black px-4 py-2 rounded-lg"
-            >Ver Planos</a
-          >
+          <a href="#planos" class="bg-violet-200 text-black px-4 py-2 rounded-lg text-sm md:text-base whitespace-nowrap font-semibold">Ver Planos</a>
         </nav>
       </div>
     </header>
 
     <section class="container mx-auto py-16 px-6">
       <h2 class="text-3xl font-bold text-center mb-8">Últimas Notícias</h2>
-      <div
-        id="news-container"
-        class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-      ></div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-bold mb-3">Notícias do Dia 02/04/2025</h3>
+          <a href="noticias_02_04_2025.html" class="text-violet-400 font-bold">Ver todas</a>
+        </article>
+        <article class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-bold mb-3">Notícias do Dia 03/04/2025</h3>
+          <a href="noticias_03_04_2025.html" class="text-violet-400 font-bold">Ver todas</a>
+        </article>
+      </div>
     </section>
 
     <footer class="bg-dark-bg py-6 text-center text-black">
       <p>&copy; 2025 @puzzle.studio88 - Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-      const noticias = [
-        {
-          imagem: "./assets/news/news1.jpg",
-          titulo: "Microsoft expande recursos exclusivos de PCs Copilot+ com Snapdragon X Series para processadores AMD e Intel",
-          descricao:
-            "Entre eles está o “Live Captions”, que exibe legendas em tempo real para conteúdo de áudio e vídeo; [...]",
-          link: "./news1.html",
-        },
-        {
-          imagem: "./assets/news/news2.jpg",
-          titulo: "DeepMind estaria restringindo publicação de pesquisas para preservar vantagem competitiva",
-          descricao:
-            "Segundo cientistas atuais e antigos da empresa, ela tem evitado divulgar estudos que possam expor inovações exploráveis por concorrentes ou que coloquem o Gemini em desvantagem frente a rivais [...]",
-          link: "./news2.html",
-        },
-        {
-          imagem: "./assets/news/news3.jpg",
-          titulo: "Mozilla planeja lançar plano “Pro” para Thunderbird",
-          descricao:
-            "Segundo o diretor administrativo, o pacote será inicialmente gratuito para “colaboradores consistentes da comunidade”, e pago para os demais usuários [...]",
-          link: "./news3.html",
-        },
-      ];
 
-      function carregarNoticias() {
-        const container = document.getElementById("news-container");
-        container.innerHTML = "";
-        noticias.forEach((noticia) => {
-          container.innerHTML += `
-          <article class="bg-white p-6 rounded-lg shadow-lg">
-            <img src="${noticia.imagem}" alt="${noticia.titulo}" class="w-full h-40 object-cover rounded-md mb-4" />
-            <h3 class="text-xl font-bold mb-3">${noticia.titulo}</h3>
-            <p class="text-gray-600">${noticia.descricao}</p>
-            <a href="${noticia.link}" class="text-blue-500 font-bold mt-4 inline-block">Leia mais</a>
-          </article>
-        `;
-        });
-      }
-
-      document.addEventListener("DOMContentLoaded", carregarNoticias);
-    </script>
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-    <script src="./js/script.js"></script>
+      <!-- Scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+      <script
+        type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      ></script>
+      <script
+        nomodule
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+      ></script>
+      <script src="./js/script.js"></script>
   </body>
 </html>
