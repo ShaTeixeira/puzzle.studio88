@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puzzle Studio | Notícias</title>
+    <link
+      rel="icon"
+      href="./assets/imgs/logo.png"
+      type="image/png"
+      sizes="16x16"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-violet-200">
+    <header class="bg-[#191923] shadow-md py-5">
+      <div class="container mx-auto flex justify-between items-center px-6">
+        <h1 class="text-2xl font-bold text-white">Puzzle Studio</h1>
+        <nav>
+          <a href="index.html" class="text-white px-4">Home</a>
+          <a href="noticias.html" class="text-white px-4">Notícias</a>
+          <a href="#planos" class="bg-violet-200 text-black px-4 py-2 rounded-lg text-sm md:text-base whitespace-nowrap font-semibold">Ver Planos</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="container mx-auto py-16 px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">Últimas Notícias</h2>
+      <div
+        id="news-container"
+        class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+      ></div>
+    </section>
+
+    <footer class="bg-dark-bg py-6 text-center text-black">
+      <p>&copy; 2025 @puzzle.studio88 - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+      const noticias = [
+        {
+          imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1UYwzZcP_WfxOIVNrHhVaC_WO0gA7cp5IoQ&s",
+          titulo: "Anatel adia decisão sobre expansão da Starlink no Brasil",
+          descricao:
+            " a agência prorrogou a análise por mais 120 dias, mantendo suspenso o pedido da empresa para operar 7,5 mil satélites adicionais no país, em comparação com os 4,4 mil atualmente permitidos. [...]",
+          link: "./news1_04_04_2025.html",
+        },
+        {
+          imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2Cavn8vfhywrsAYYDU5_qf917B0ZY2flI1Q&s",
+          titulo: "Python define formato padrão de arquivo de lock para pacotes",
+          descricao:
+            "o time oficial da linguagem aprovou a proposta PEP 751, adotando o TOML (pylock.toml), amplamente suportado e de fácil leitura. Paul Moore, um dos desenvolvedores centrais, destaca que isso é algo definitivo. [...]",
+          link: "./news2_04_04_2025.html",
+        },
+        {
+          imagem: "https://i0.statig.com.br/bancodeimagens/bp/re/cp/bprecpad16o4vsxvhak4fcq5e.jpg",
+          titulo: "Amazon lançará seus primeiros satélites para competir com Starlink",
+          descricao:
+            "o primeiro lote de 27 dispositivos do Projeto Kuiper está programado para decolar no dia 9. Entre os parceiros de lançamento está a própria SpaceX. [...]",
+          link: "./news3_04_04_2025.html",
+        },
+      ];
+
+      function carregarNoticias() {
+        const container = document.getElementById("news-container");
+        container.innerHTML = "";
+        noticias.forEach((noticia) => {
+          container.innerHTML += `
+          <article class="bg-white p-6 rounded-lg shadow-lg">
+            <img src="${noticia.imagem}" alt="${noticia.titulo}" class="w-full h-40 object-cover rounded-md mb-4" />
+            <h3 class="text-xl font-bold mb-3">${noticia.titulo}</h3>
+            <p class="text-gray-600">${noticia.descricao}</p>
+            <a href="${noticia.link}" class="text-violet-400 font-bold mt-4 inline-block">Leia mais</a>
+          </article>
+        `;
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", carregarNoticias);
+    </script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
