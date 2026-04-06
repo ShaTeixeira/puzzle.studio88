@@ -70,51 +70,62 @@ tailwind.config = {
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="h-full">
-  <div id="app-wrapper" class="w-full h-full overflow-auto" style="background: radial-gradient(ellipse at top, #0f172a 0%, #020617 50%, #000 100%);"><!-- Decorative grid -->
+  <div id="app-wrapper" class="w-full h-full overflow-auto" style="background: radial-gradient(ellipse at top, #0f172a 0%, #020617 50%, #000 100%);">
+   <!-- Decorative grid -->
    <div class="fixed inset-0 pointer-events-none opacity-[0.03]" style="background-image: linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
-   <div class="relative max-w-md mx-auto px-5 py-10"><!-- Badge -->
-    <div class="fade-up delay-1 flex justify-center mb-6"><span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-wider" style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25); color: #10b981;"> <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> DIAGNÓSTICO DISPONÍVEL </span>
+   <div class="relative max-w-md mx-auto px-5 py-10">
+    <!-- Badge -->
+    <div class="fade-up delay-1 flex justify-center mb-6">
+     <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-wider" style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25); color: #10b981;"> <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> DIAGNÓSTICO DISPONÍVEL </span>
     </div><!-- HERO -->
     <header class="fade-up delay-2 text-center mb-8">
      <h1 id="hero-title" class="font-outfit font-900 text-3xl sm:text-4xl leading-tight text-white mb-4" style="text-shadow: 0 0 60px rgba(16,185,129,0.15);">Seu site está te fazendo <span class="text-emerald-400">perder clientes</span> (e você nem percebe)</h1>
      <p id="hero-subtitle" class="font-outfit font-300 text-slate-400 text-base leading-relaxed max-w-sm mx-auto">Receba uma análise direta com os erros que estão travando suas vendas</p>
     </header><!-- CTA Principal -->
-    <div class="fade-up delay-3 mb-10"><a id="cta-main" href="https://wa.me/5527996189892?text=Quero%20saber%20mais%20sobre%20as%20landing%20pages%20e%20valores%20dispon%C3%ADveis%20dos%20planos%20e%20outros." target="_blank" rel="noopener noreferrer" class="pulse-glow block text-center py-4 px-6 rounded-2xl font-outfit font-700 text-lg text-black transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]" style="background: linear-gradient(135deg, #10b981, #34d399);"> <span class="flex items-center justify-center gap-2">
-       <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+    <div class="fade-up delay-3 mb-10">
+     <a id="cta-main" href="https://wa.me/5527996189892?text=Quero%20saber%20mais%20sobre%20as%20RaioX%20e%20valores%20dispon%C3%ADveis%20dos%20planos%20e%20outros." target="_blank" rel="noopener noreferrer" class="pulse-glow block text-center py-4 px-6 rounded-2xl font-outfit font-700 text-lg text-black transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]" style="background: linear-gradient(135deg, #10b981, #34d399);"> <span class="flex items-center justify-center gap-2">
+       <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
        </svg><span id="cta-text">Quero meu Raio-X</span> </span> </a>
     </div><!-- PROBLEMA -->
     <div class="fade-up delay-3 glass-card scan-effect rounded-2xl p-6 mb-5">
-     <div class="flex items-center gap-2 mb-4"><i data-lucide="alert-triangle" style="width:18px;height:18px;color:#ef4444;"></i> <span class="font-outfit font-600 text-sm text-red-400 tracking-wide uppercase">Problemas comuns</span>
+     <div class="flex items-center gap-2 mb-4">
+      <i data-lucide="alert-triangle" style="width:18px;height:18px;color:#ef4444;"></i> <span class="font-outfit font-600 text-sm text-red-400 tracking-wide uppercase">Problemas comuns</span>
      </div>
      <div class="space-y-3">
-      <div class="flex items-start gap-3"><span class="mt-0.5 w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(239,68,68,0.15);"><i data-lucide="x" style="width:14px;height:14px;color:#ef4444;"></i></span> <span class="font-outfit text-slate-300 text-sm">Seu site <strong class="text-white">não gera clientes</strong></span>
+      <div class="flex items-start gap-3">
+       <span class="mt-0.5 w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(239,68,68,0.15);"><i data-lucide="x" style="width:14px;height:14px;color:#ef4444;"></i></span> <span class="font-outfit text-slate-300 text-sm">Seu site <strong class="text-white">não gera clientes</strong></span>
       </div>
-      <div class="flex items-start gap-3"><span class="mt-0.5 w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(239,68,68,0.15);"><i data-lucide="x" style="width:14px;height:14px;color:#ef4444;"></i></span> <span class="font-outfit text-slate-300 text-sm">Você investe em tráfego <strong class="text-white">sem retorno</strong></span>
+      <div class="flex items-start gap-3">
+       <span class="mt-0.5 w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(239,68,68,0.15);"><i data-lucide="x" style="width:14px;height:14px;color:#ef4444;"></i></span> <span class="font-outfit text-slate-300 text-sm">Você investe em tráfego <strong class="text-white">sem retorno</strong></span>
       </div>
-      <div class="flex items-start gap-3"><span class="mt-0.5 w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(239,68,68,0.15);"><i data-lucide="x" style="width:14px;height:14px;color:#ef4444;"></i></span> <span class="font-outfit text-slate-300 text-sm">As pessoas entram e <strong class="text-white">saem rápido</strong></span>
+      <div class="flex items-start gap-3">
+       <span class="mt-0.5 w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(239,68,68,0.15);"><i data-lucide="x" style="width:14px;height:14px;color:#ef4444;"></i></span> <span class="font-outfit text-slate-300 text-sm">As pessoas entram e <strong class="text-white">saem rápido</strong></span>
       </div>
      </div>
     </div><!-- COMO FUNCIONA -->
     <div class="fade-up delay-4 glass-card rounded-2xl p-6 mb-5">
-     <div class="flex items-center gap-2 mb-5"><i data-lucide="cpu" style="width:18px;height:18px;color:#10b981;"></i> <span class="font-outfit font-600 text-sm text-emerald-400 tracking-wide uppercase">Como funciona</span>
+     <div class="flex items-center gap-2 mb-5">
+      <i data-lucide="cpu" style="width:18px;height:18px;color:#10b981;"></i> <span class="font-outfit font-600 text-sm text-emerald-400 tracking-wide uppercase">Como funciona</span>
      </div>
      <div class="space-y-4">
-      <div class="flex items-center gap-4"><span class="w-10 h-10 flex-shrink-0 rounded-xl flex items-center justify-center font-mono font-600 text-emerald-400 text-sm" style="background:rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2);">01</span>
+      <div class="flex items-center gap-4">
+       <span class="w-10 h-10 flex-shrink-0 rounded-xl flex items-center justify-center font-mono font-600 text-emerald-400 text-sm" style="background:rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2);">01</span>
        <div>
         <p class="font-outfit font-600 text-white text-sm">Você envia seu site</p>
         <p class="font-outfit text-slate-500 text-xs">Leva menos de 1 minuto</p>
        </div>
       </div>
       <div class="w-px h-4 ml-5" style="background: linear-gradient(rgba(16,185,129,0.3), transparent);"></div>
-      <div class="flex items-center gap-4"><span class="w-10 h-10 flex-shrink-0 rounded-xl flex items-center justify-center font-mono font-600 text-emerald-400 text-sm" style="background:rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2);">02</span>
+      <div class="flex items-center gap-4">
+       <span class="w-10 h-10 flex-shrink-0 rounded-xl flex items-center justify-center font-mono font-600 text-emerald-400 text-sm" style="background:rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2);">02</span>
        <div>
         <p class="font-outfit font-600 text-white text-sm">Eu analiso tudo</p>
         <p class="font-outfit text-slate-500 text-xs">Com olhar estratégico</p>
        </div>
       </div>
       <div class="w-px h-4 ml-5" style="background: linear-gradient(rgba(16,185,129,0.3), transparent);"></div>
-      <div class="flex items-center gap-4"><span class="w-10 h-10 flex-shrink-0 rounded-xl flex items-center justify-center font-mono font-600 text-emerald-400 text-sm" style="background:rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2);">03</span>
+      <div class="flex items-center gap-4">
+       <span class="w-10 h-10 flex-shrink-0 rounded-xl flex items-center justify-center font-mono font-600 text-emerald-400 text-sm" style="background:rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2);">03</span>
        <div>
         <p class="font-outfit font-600 text-white text-sm">Te mostro os erros</p>
         <p class="font-outfit text-slate-500 text-xs">E como melhorar cada um</p>
@@ -123,33 +134,59 @@ tailwind.config = {
      </div>
     </div><!-- PLANOS -->
     <div class="fade-up delay-5 mb-5">
-     <div class="flex items-center gap-2 mb-4 justify-center"><i data-lucide="layers" style="width:18px;height:18px;color:#10b981;"></i> <span class="font-outfit font-700 text-white text-lg">Escolha seu Raio-X</span>
+     <div class="flex items-center gap-2 mb-4 justify-center">
+      <i data-lucide="layers" style="width:18px;height:18px;color:#10b981;"></i> <span class="font-outfit font-700 text-white text-lg">Escolha seu Raio-X</span>
      </div><!-- Essencial -->
      <div class="glass-card rounded-2xl p-5 mb-3">
-      <div class="flex justify-between items-start mb-2"><span class="font-outfit font-600 text-white">Essencial</span> <span id="price-essential" class="font-mono font-600 text-emerald-400 text-sm">A partir de R$97</span>
+      <div class="flex justify-between items-start mb-2">
+       <span class="font-outfit font-600 text-white">Essencial</span> <span id="price-essential" class="font-mono font-600 text-emerald-400 text-sm">A partir de R$97</span>
       </div>
       <p class="font-outfit text-slate-400 text-xs">Análise simples com principais erros</p><a href="https://wa.me/5527996189892?text=Quero%20saber%20mais%20sobre%20as%20landing%20pages%20e%20valores%20dispon%C3%ADveis%20dos%20planos%20e%20outros." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 mt-3 w-full py-2 px-4 rounded-lg font-outfit font-600 text-sm text-white transition-all duration-300 hover:scale-[1.02]" style="background: rgba(16,185,129,0.2); border: 1px solid rgba(16,185,129,0.4);">Escolher</a>
      </div><!-- Estratégico (destaque) -->
-     <div class="plan-highlight rounded-2xl p-5 mb-3 relative float-anim"><span class="absolute -top-2.5 right-4 px-3 py-0.5 rounded-full text-[10px] font-mono font-600 tracking-wider" style="background: linear-gradient(135deg, #10b981, #34d399); color: black;">MAIS POPULAR</span>
-      <div class="flex justify-between items-start mb-2"><span class="font-outfit font-700 text-white flex items-center gap-1.5">Estratégico <span class="text-yellow-400">⭐</span></span> <span id="price-strategic" class="font-mono font-600 text-emerald-400">R$197</span>
+     <div class="plan-highlight rounded-2xl p-5 mb-3 relative float-anim">
+      <span class="absolute -top-2.5 right-4 px-3 py-0.5 rounded-full text-[10px] font-mono font-600 tracking-wider" style="background: linear-gradient(135deg, #10b981, #34d399); color: black;">MAIS POPULAR</span>
+      <div class="flex justify-between items-start mb-2">
+       <span class="font-outfit font-700 text-white flex items-center gap-1.5">Estratégico <span class="text-yellow-400">⭐</span></span> <span id="price-strategic" class="font-mono font-600 text-emerald-400">R$197</span>
       </div>
       <p class="font-outfit text-slate-400 text-xs">Análise detalhada + melhorias aplicáveis</p><a href="https://wa.me/5527996189892?text=Quero%20saber%20mais%20sobre%20as%20landing%20pages%20e%20valores%20dispon%C3%ADveis%20dos%20planos%20e%20outros." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 mt-3 w-full py-2 px-4 rounded-lg font-outfit font-600 text-sm text-black transition-all duration-300 hover:scale-[1.02]" style="background: linear-gradient(135deg, #10b981, #34d399);">Escolher</a>
      </div><!-- Avançado -->
      <div class="glass-card rounded-2xl p-5 mb-3">
-      <div class="flex justify-between items-start mb-2"><span class="font-outfit font-600 text-white">Avançado</span> <span id="price-advanced" class="font-mono font-600 text-emerald-400">R$297</span>
+      <div class="flex justify-between items-start mb-2">
+       <span class="font-outfit font-600 text-white">Avançado</span> <span id="price-advanced" class="font-mono font-600 text-emerald-400">R$297</span>
       </div>
       <p class="font-outfit text-slate-400 text-xs">Análise completa + direcionamento de conversão</p><a href="https://wa.me/5527996189892?text=Quero%20saber%20mais%20sobre%20as%20landing%20pages%20e%20valores%20dispon%C3%ADveis%20dos%20planos%20e%20outros." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 mt-3 w-full py-2 px-4 rounded-lg font-outfit font-600 text-sm text-white transition-all duration-300 hover:scale-[1.02]" style="background: rgba(16,185,129,0.2); border: 1px solid rgba(16,185,129,0.4);">Escolher</a>
      </div>
+    </div><!-- PRODUTOS -->
+    <div class="fade-up delay-6 mb-5">
+     <div class="flex items-center gap-2 mb-4 justify-center">
+      <i data-lucide="shopping-bag" style="width:18px;height:18px;color:#10b981;"></i> <span class="font-outfit font-700 text-white text-lg">Produtos Prontos</span>
+     </div><!-- Landing Page -->
+     <div class="glass-card rounded-2xl p-5 mb-3">
+      <div class="flex justify-between items-start mb-2">
+       <span class="font-outfit font-600 text-white">Landing Pages Otimizadas</span> <span id="price-landing" class="font-mono font-600 text-emerald-400 text-sm">A partir de R$167</span>
+      </div>
+      <p class="font-outfit text-slate-400 text-xs mb-3">Páginas prontas para converter seus clientes</p><a href="https://wa.me/5527996189892?text=Quero%20saber%20mais%20sobre%20as%20landing%20pages%20e%20valores%20dispon%C3%ADveis%20dos%20planos%20e%20outros." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-2 px-4 rounded-lg font-outfit font-600 text-sm text-white transition-all duration-300 hover:scale-[1.02]" style="background: rgba(16,185,129,0.2); border: 1px solid rgba(16,185,129,0.4);">Saiba mais</a>
+     </div><!-- E-book -->
+     <div class="glass-card rounded-2xl p-5 mb-3">
+      <div class="flex justify-between items-start mb-2">
+       <span class="font-outfit font-600 text-white">E-book Marketing Digital</span> <span id="price-ebook" class="font-mono font-600 text-emerald-400">R$29</span>
+      </div>
+      <p class="font-outfit text-slate-400 text-xs mb-3">Guia completo para suas estratégias online</p><a href="https://wa.me/5527996189892?text=Quero%20saber%20mais%20sobre%20as%20landing%20pages%20e%20valores%20dispon%C3%ADveis%20dos%20planos%20e%20outros." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-2 px-4 rounded-lg font-outfit font-600 text-sm text-white transition-all duration-300 hover:scale-[1.02]" style="background: rgba(16,185,129,0.2); border: 1px solid rgba(16,185,129,0.4);">Saiba mais</a>
+     </div>
     </div><!-- O QUE RECEBE -->
     <div class="fade-up delay-6 glass-card rounded-2xl p-6 mb-8">
-     <div class="flex items-center gap-2 mb-4"><i data-lucide="gift" style="width:18px;height:18px;color:#10b981;"></i> <span class="font-outfit font-600 text-sm text-emerald-400 tracking-wide uppercase">O que você recebe</span>
+     <div class="flex items-center gap-2 mb-4">
+      <i data-lucide="gift" style="width:18px;height:18px;color:#10b981;"></i> <span class="font-outfit font-600 text-sm text-emerald-400 tracking-wide uppercase">O que você recebe</span>
      </div>
      <div class="space-y-3">
-      <div class="flex items-center gap-3"><span class="w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(16,185,129,0.15);"><i data-lucide="check" style="width:14px;height:14px;color:#10b981;"></i></span> <span class="font-outfit text-slate-300 text-sm">Análise clara e sem enrolação</span>
+      <div class="flex items-center gap-3">
+       <span class="w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(16,185,129,0.15);"><i data-lucide="check" style="width:14px;height:14px;color:#10b981;"></i></span> <span class="font-outfit text-slate-300 text-sm">Análise clara e sem enrolação</span>
       </div>
-      <div class="flex items-center gap-3"><span class="w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(16,185,129,0.15);"><i data-lucide="check" style="width:14px;height:14px;color:#10b981;"></i></span> <span class="font-outfit text-slate-300 text-sm">Pontos de melhoria prioritários</span>
+      <div class="flex items-center gap-3">
+       <span class="w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(16,185,129,0.15);"><i data-lucide="check" style="width:14px;height:14px;color:#10b981;"></i></span> <span class="font-outfit text-slate-300 text-sm">Pontos de melhoria prioritários</span>
       </div>
-      <div class="flex items-center gap-3"><span class="w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(16,185,129,0.15);"><i data-lucide="check" style="width:14px;height:14px;color:#10b981;"></i></span> <span class="font-outfit text-slate-300 text-sm">Sugestões práticas para aplicar hoje</span>
+      <div class="flex items-center gap-3">
+       <span class="w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(16,185,129,0.15);"><i data-lucide="check" style="width:14px;height:14px;color:#10b981;"></i></span> <span class="font-outfit text-slate-300 text-sm">Sugestões práticas para aplicar hoje</span>
       </div>
      </div>
     </div><!-- CTA FINAL -->
@@ -177,6 +214,8 @@ tailwind.config = {
     plan_essential_price: 'A partir de R$97',
     plan_strategic_price: 'R$197',
     plan_advanced_price: 'R$297',
+    landing_page_price: 'A partir de R$167',
+    ebook_price: 'R$29',
     whatsapp_text: 'Falar no WhatsApp'
   };
 
@@ -215,6 +254,8 @@ tailwind.config = {
     document.getElementById('price-essential').textContent = c.plan_essential_price;
     document.getElementById('price-strategic').textContent = c.plan_strategic_price;
     document.getElementById('price-advanced').textContent = c.plan_advanced_price;
+    document.getElementById('price-landing').textContent = c.landing_page_price;
+    document.getElementById('price-ebook').textContent = c.ebook_price;
 
     // WhatsApp button
     const waBtn = document.getElementById('whatsapp-btn');
@@ -250,11 +291,13 @@ tailwind.config = {
       ['plan_essential_price', config.plan_essential_price || defaultConfig.plan_essential_price],
       ['plan_strategic_price', config.plan_strategic_price || defaultConfig.plan_strategic_price],
       ['plan_advanced_price', config.plan_advanced_price || defaultConfig.plan_advanced_price],
+      ['landing_page_price', config.landing_page_price || defaultConfig.landing_page_price],
+      ['ebook_price', config.ebook_price || defaultConfig.ebook_price],
       ['whatsapp_text', config.whatsapp_text || defaultConfig.whatsapp_text],
     ])
   });
 
   lucide.createIcons();
 </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e847d60d375e638',t:'MTc3NTUxNzI3Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e84983a44c6e638',t:'MTc3NTUxODM3Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
