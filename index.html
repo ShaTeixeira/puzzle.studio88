@@ -1,303 +1,308 @@
 <!doctype html>
-<html lang="pt-br" class="h-full">
- <head>
+<html lang="pt-BR">
+ <head><script src="/_sdk/telemetry_sdk.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Raio-X do Site</title>
+  <title>Puzzle Studio - Raio X de Conversão</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-  <script src="/_sdk/element_sdk.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
-  <script>
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: {
-        outfit: ['Outfit', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace']
-      }
-    }
-  }
-}
-</script>
   <style>
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.2); }
-  50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.4); }
-}
-@keyframes scan-line {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(400%); }
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-}
-.fade-up { animation: fadeUp 0.7s ease-out both; }
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.35s; }
-.delay-4 { animation-delay: 0.5s; }
-.delay-5 { animation-delay: 0.65s; }
-.delay-6 { animation-delay: 0.8s; }
-.delay-7 { animation-delay: 0.95s; }
-.pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
-.float-anim { animation: float 4s ease-in-out infinite; }
-.scan-effect { position: relative; overflow: hidden; }
-.scan-effect::after {
-  content: '';
-  position: absolute; left: 0; top: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(16,185,129,0.6), transparent);
-  animation: scan-line 3s ease-in-out infinite;
-  pointer-events: none;
-}
-.glass-card {
-  background: linear-gradient(135deg, rgba(15,23,42,0.9), rgba(30,41,59,0.7));
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(71,85,105,0.3);
-}
-.plan-highlight {
-  background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(6,78,59,0.2));
-  border: 1px solid rgba(16,185,129,0.3);
-}
-</style>
-  <style>body { box-sizing: border-box; }</style>
+        body { font-family: 'DM Sans', sans-serif; }
+        .btn-primary { transition: all 0.2s ease; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(22,163,74,0.3); }
+        .card-hover { transition: all 0.2s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-answer.open { max-height: 200px; }
+    </style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/resizing_sdk.js" type="text/javascript"></script>
  </head>
- <body class="h-full">
-  <div id="app-wrapper" class="w-full h-full overflow-auto" style="background: radial-gradient(ellipse at top, #0f172a 0%, #020617 50%, #000 100%);">
-   <!-- Decorative grid -->
-   <div class="fixed inset-0 pointer-events-none opacity-[0.03]" style="background-image: linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
-   <div class="relative max-w-md mx-auto px-5 py-10">
-    <!-- Badge -->
-    <div class="fade-up delay-1 flex justify-center mb-6">
-     <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-wider" style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25); color: #10b981;"> <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> DIAGNÓSTICO DISPONÍVEL </span>
-    </div><!-- HERO -->
-    <header class="fade-up delay-2 text-center mb-8">
-     <h1 id="hero-title" class="font-outfit font-900 text-3xl sm:text-4xl leading-tight text-white mb-4" style="text-shadow: 0 0 60px rgba(16,185,129,0.15);">Seu site está te fazendo <span class="text-emerald-400">perder clientes</span> (e você nem percebe)</h1>
-     <p id="hero-subtitle" class="font-outfit font-300 text-slate-400 text-base leading-relaxed max-w-sm mx-auto">Receba uma análise direta com os erros que estão travando suas vendas</p>
-    </header><!-- CTA Principal -->
-    <div class="fade-up delay-3 mb-10">
-     <a id="cta-main" href="https://wa.me/5527996189892?text=Quero%20saber%20mais%20sobre%20as%20RaioX%20e%20valores%20dispon%C3%ADveis%20dos%20planos%20e%20outros." target="_blank" rel="noopener noreferrer" class="pulse-glow block text-center py-4 px-6 rounded-2xl font-outfit font-700 text-lg text-black transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]" style="background: linear-gradient(135deg, #10b981, #34d399);"> <span class="flex items-center justify-center gap-2">
-       <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
-       </svg><span id="cta-text">Quero meu Raio-X</span> </span> </a>
-    </div><!-- PROBLEMA -->
-    <div class="fade-up delay-3 glass-card scan-effect rounded-2xl p-6 mb-5">
-     <div class="flex items-center gap-2 mb-4">
-      <i data-lucide="alert-triangle" style="width:18px;height:18px;color:#ef4444;"></i> <span class="font-outfit font-600 text-sm text-red-400 tracking-wide uppercase">Problemas comuns</span>
-     </div>
-     <div class="space-y-3">
-      <div class="flex items-start gap-3">
-       <span class="mt-0.5 w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(239,68,68,0.15);"><i data-lucide="x" style="width:14px;height:14px;color:#ef4444;"></i></span> <span class="font-outfit text-slate-300 text-sm">Seu site <strong class="text-white">não gera clientes</strong></span>
-      </div>
-      <div class="flex items-start gap-3">
-       <span class="mt-0.5 w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(239,68,68,0.15);"><i data-lucide="x" style="width:14px;height:14px;color:#ef4444;"></i></span> <span class="font-outfit text-slate-300 text-sm">Você investe em tráfego <strong class="text-white">sem retorno</strong></span>
-      </div>
-      <div class="flex items-start gap-3">
-       <span class="mt-0.5 w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(239,68,68,0.15);"><i data-lucide="x" style="width:14px;height:14px;color:#ef4444;"></i></span> <span class="font-outfit text-slate-300 text-sm">As pessoas entram e <strong class="text-white">saem rápido</strong></span>
-      </div>
-     </div>
-    </div><!-- COMO FUNCIONA -->
-    <div class="fade-up delay-4 glass-card rounded-2xl p-6 mb-5">
-     <div class="flex items-center gap-2 mb-5">
-      <i data-lucide="cpu" style="width:18px;height:18px;color:#10b981;"></i> <span class="font-outfit font-600 text-sm text-emerald-400 tracking-wide uppercase">Como funciona</span>
-     </div>
-     <div class="space-y-4">
-      <div class="flex items-center gap-4">
-       <span class="w-10 h-10 flex-shrink-0 rounded-xl flex items-center justify-center font-mono font-600 text-emerald-400 text-sm" style="background:rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2);">01</span>
-       <div>
-        <p class="font-outfit font-600 text-white text-sm">Você envia seu site</p>
-        <p class="font-outfit text-slate-500 text-xs">Leva menos de 1 minuto</p>
-       </div>
-      </div>
-      <div class="w-px h-4 ml-5" style="background: linear-gradient(rgba(16,185,129,0.3), transparent);"></div>
-      <div class="flex items-center gap-4">
-       <span class="w-10 h-10 flex-shrink-0 rounded-xl flex items-center justify-center font-mono font-600 text-emerald-400 text-sm" style="background:rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2);">02</span>
-       <div>
-        <p class="font-outfit font-600 text-white text-sm">Eu analiso tudo</p>
-        <p class="font-outfit text-slate-500 text-xs">Com olhar estratégico</p>
-       </div>
-      </div>
-      <div class="w-px h-4 ml-5" style="background: linear-gradient(rgba(16,185,129,0.3), transparent);"></div>
-      <div class="flex items-center gap-4">
-       <span class="w-10 h-10 flex-shrink-0 rounded-xl flex items-center justify-center font-mono font-600 text-emerald-400 text-sm" style="background:rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2);">03</span>
-       <div>
-        <p class="font-outfit font-600 text-white text-sm">Te mostro os erros</p>
-        <p class="font-outfit text-slate-500 text-xs">E como melhorar cada um</p>
-       </div>
-      </div>
-     </div>
-    </div><!-- PLANOS -->
-    <div class="fade-up delay-5 mb-5">
-     <div class="flex items-center gap-2 mb-4 justify-center">
-      <i data-lucide="layers" style="width:18px;height:18px;color:#10b981;"></i> <span class="font-outfit font-700 text-white text-lg">Escolha seu Raio-X</span>
-     </div><!-- Essencial -->
-     <div class="glass-card rounded-2xl p-5 mb-3">
-      <div class="flex justify-between items-start mb-2">
-       <span class="font-outfit font-600 text-white">Essencial</span> <span id="price-essential" class="font-mono font-600 text-emerald-400 text-sm">A partir de R$87</span>
-      </div>
-      <p class="font-outfit text-slate-400 text-xs">Análise simples com principais erros</p><a href="https://wa.me/5527996189892?text=Quero%20saber%20mais%20sobre%20o%20RaioX%20Essencial%20valores%20dispon%C3%ADveis%20dos%20planos%20e%20outros." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 mt-3 w-full py-2 px-4 rounded-lg font-outfit font-600 text-sm text-white transition-all duration-300 hover:scale-[1.02]" style="background: rgba(16,185,129,0.2); border: 1px solid rgba(16,185,129,0.4);">Escolher</a>
-     </div><!-- Estratégico (destaque) -->
-     <div class="plan-highlight rounded-2xl p-5 mb-3 relative float-anim">
-      <span class="absolute -top-2.5 right-4 px-3 py-0.5 rounded-full text-[10px] font-mono font-600 tracking-wider" style="background: linear-gradient(135deg, #10b981, #34d399); color: black;">MAIS POPULAR</span>
-      <div class="flex justify-between items-start mb-2">
-       <span class="font-outfit font-700 text-white flex items-center gap-1.5">Estratégico <span class="text-yellow-400">⭐</span></span> <span id="price-strategic" class="font-mono font-600 text-emerald-400">R$187</span>
-      </div>
-      <p class="font-outfit text-slate-400 text-xs">Análise detalhada + melhorias aplicáveis</p><a href="https://wa.me/5527996189892?text=Quero%20saber%20mais%20sobre%20o%20RaioX%20Estrategico%20valores%20dispon%C3%ADveis%20dos%20planos%20e%20outros." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 mt-3 w-full py-2 px-4 rounded-lg font-outfit font-600 text-sm text-black transition-all duration-300 hover:scale-[1.02]" style="background: linear-gradient(135deg, #10b981, #34d399);">Escolher</a>
-     </div><!-- Avançado -->
-     <div class="glass-card rounded-2xl p-5 mb-3">
-      <div class="flex justify-between items-start mb-2">
-       <span class="font-outfit font-600 text-white">Avançado</span> <span id="price-advanced" class="font-mono font-600 text-emerald-400">R$287</span>
-      </div>
-      <p class="font-outfit text-slate-400 text-xs">Análise completa + direcionamento de conversão</p><a href="https://wa.me/5527996189892?text=Quero%20saber%20mais%20sobre%20o%20RaioX%20Avançado%20valores%20dispon%C3%ADveis%20dos%20planos%20e%20outros." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 mt-3 w-full py-2 px-4 rounded-lg font-outfit font-600 text-sm text-white transition-all duration-300 hover:scale-[1.02]" style="background: rgba(16,185,129,0.2); border: 1px solid rgba(16,185,129,0.4);">Escolher</a>
-     </div>
-    </div><!-- PRODUTOS -->
-    <div class="fade-up delay-6 mb-5">
-     <div class="flex items-center gap-2 mb-4 justify-center">
-      <i data-lucide="shopping-bag" style="width:18px;height:18px;color:#10b981;"></i> <span class="font-outfit font-700 text-white text-lg">Produtos Prontos</span>
-     </div><!-- Landing Page -->
-     <div class="glass-card rounded-2xl p-5 mb-3">
-      <div class="flex justify-between items-start mb-2">
-       <span class="font-outfit font-600 text-white">Landing Pages Otimizadas</span> <span id="price-landing" class="font-mono font-600 text-emerald-400 text-sm">A partir de R$600</span>
-      </div>
-      <p class="font-outfit text-slate-400 text-xs mb-3">Páginas prontas para converter seus clientes</p><a href="https://wa.me/5527996189892?text=Quero%20saber%20mais%20sobre%20as%20landing%20pages%20e%20valores%20dispon%C3%ADveis%20dos%20planos%20e%20outros." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-2 px-4 rounded-lg font-outfit font-600 text-sm text-white transition-all duration-300 hover:scale-[1.02]" style="background: rgba(16,185,129,0.2); border: 1px solid rgba(16,185,129,0.4);">Saiba mais</a>
-     </div><!-- E-book -->
-     <div class="glass-card rounded-2xl p-5 mb-3">
-      <div class="flex justify-between items-start mb-2">
-       <span class="font-outfit font-600 text-white">E-book Marketing Digital</span> <span id="price-ebook" class="font-mono font-600 text-emerald-400">R$29</span>
-      </div>
-      <p class="font-outfit text-slate-400 text-xs mb-3">Guia completo para suas estratégias online</p><a href="https://pay.kirvano.com/4731de49-a97c-4f02-b0ab-84721fe629d9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-2 px-4 rounded-lg font-outfit font-600 text-sm text-white transition-all duration-300 hover:scale-[1.02]" style="background: rgba(16,185,129,0.2); border: 1px solid rgba(16,185,129,0.4);">Saiba mais</a>
-     </div>
-    </div><!-- O QUE RECEBE -->
-    <div class="fade-up delay-6 glass-card rounded-2xl p-6 mb-8">
-     <div class="flex items-center gap-2 mb-4">
-      <i data-lucide="gift" style="width:18px;height:18px;color:#10b981;"></i> <span class="font-outfit font-600 text-sm text-emerald-400 tracking-wide uppercase">O que você recebe</span>
-     </div>
-     <div class="space-y-3">
-      <div class="flex items-center gap-3">
-       <span class="w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(16,185,129,0.15);"><i data-lucide="check" style="width:14px;height:14px;color:#10b981;"></i></span> <span class="font-outfit text-slate-300 text-sm">Análise clara e sem enrolação</span>
-      </div>
-      <div class="flex items-center gap-3">
-       <span class="w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(16,185,129,0.15);"><i data-lucide="check" style="width:14px;height:14px;color:#10b981;"></i></span> <span class="font-outfit text-slate-300 text-sm">Pontos de melhoria prioritários</span>
-      </div>
-      <div class="flex items-center gap-3">
-       <span class="w-6 h-6 flex-shrink-0 rounded-lg flex items-center justify-center" style="background:rgba(16,185,129,0.15);"><i data-lucide="check" style="width:14px;height:14px;color:#10b981;"></i></span> <span class="font-outfit text-slate-300 text-sm">Sugestões práticas para aplicar hoje</span>
-      </div>
-     </div>
-    </div><!-- CTA FINAL -->
-    <div class="fade-up delay-7 text-center mb-10">
-     <h2 class="font-outfit font-800 text-xl text-white mb-2">Descubra o que está te fazendo <span class="text-emerald-400">perder clientes</span></h2>
-     <p class="font-outfit text-slate-500 text-sm mb-5">Não espere mais — fale comigo agora</p><a id="whatsapp-btn" href="https://wa.me/5527996189892?text=Quero%20saber%20mais%20sobre%20as%20landing%20pages%20e%20valores%20dispon%C3%ADveis%20dos%20planos%20e%20outros." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 py-4 px-8 rounded-2xl font-outfit font-700 text-white text-base transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]" style="background: linear-gradient(135deg, #2563eb, #3b82f6); box-shadow: 0 0 30px rgba(59,130,246,0.3);"> <i data-lucide="message-circle" style="width:20px;height:20px;"></i> <span id="whatsapp-text">Falar no WhatsApp</span> </a>
-    </div>
-    <footer class="text-center pb-6">
-     <p class="font-outfit text-slate-600 text-xs">© Raio-X do Site — Todos os direitos reservados</p>
-    </footer>
+ <body data-template-id="__page-root" class="w-full"><!-- HERO -->
+  <header class="w-full px-6 py-24 md:py-32">
+   <div class="max-w-3xl mx-auto text-center">
+    <h1 data-template-id="hero-title" class="canva-text text-3xl md:text-5xl font-bold leading-tight mb-6"></h1>
+    <p data-template-id="hero-subtitle" class="canva-text text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed"></p><a href="#cta-form" class="inline-block"> <button data-template-id="hero-cta" class="canva-button btn-primary px-8 py-4 rounded-lg text-lg font-semibold"></button> </a>
+    <p data-template-id="hero-support" class="canva-text mt-5 text-sm leading-relaxed"></p>
    </div>
-  </div>
+  </header>
+  <main><!-- O PROBLEMA -->
+   <section class="w-full px-6 py-20">
+    <div class="max-w-3xl mx-auto">
+     <h2 data-template-id="problem-title" class="canva-text font-bold mb-6"></h2>
+     <p data-template-id="problem-intro" class="canva-text mb-6"></p>
+     <ul class="space-y-3 mb-6">
+      <li class="flex items-start gap-3"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"></i><span data-template-id="problem-1" class="canva-text"></span></li>
+      <li class="flex items-start gap-3"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"></i><span data-template-id="problem-2" class="canva-text"></span></li>
+      <li class="flex items-start gap-3"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"></i><span data-template-id="problem-3" class="canva-text"></span></li>
+      <li class="flex items-start gap-3"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"></i><span data-template-id="problem-4" class="canva-text"></span></li>
+      <li class="flex items-start gap-3"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"></i><span data-template-id="problem-5" class="canva-text"></span></li>
+      <li class="flex items-start gap-3"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"></i><span data-template-id="problem-6" class="canva-text"></span></li>
+     </ul>
+     <p data-template-id="problem-conclusion" class="canva-text"></p>
+    </div>
+   </section><!-- O QUE ANALISAMOS -->
+   <section class="w-full px-6 py-20 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+     <h2 data-template-id="analysis-title" class="canva-text text-center font-bold mb-12"></h2>
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div data-template-id="card-1" class="canva-card card-hover p-6 rounded-xl">
+       <i data-lucide="eye" class="w-6 h-6 text-green-600 mb-3"></i>
+       <p data-template-id="card-1-text" class="canva-text font-medium"></p>
+      </div>
+      <div data-template-id="card-2" class="canva-card card-hover p-6 rounded-xl">
+       <i data-lucide="target" class="w-6 h-6 text-green-600 mb-3"></i>
+       <p data-template-id="card-2-text" class="canva-text font-medium"></p>
+      </div>
+      <div data-template-id="card-3" class="canva-card card-hover p-6 rounded-xl">
+       <i data-lucide="mouse-pointer-click" class="w-6 h-6 text-green-600 mb-3"></i>
+       <p data-template-id="card-3-text" class="canva-text font-medium"></p>
+      </div>
+      <div data-template-id="card-4" class="canva-card card-hover p-6 rounded-xl">
+       <i data-lucide="smartphone" class="w-6 h-6 text-green-600 mb-3"></i>
+       <p data-template-id="card-4-text" class="canva-text font-medium"></p>
+      </div>
+      <div data-template-id="card-5" class="canva-card card-hover p-6 rounded-xl">
+       <i data-lucide="zap" class="w-6 h-6 text-green-600 mb-3"></i>
+       <p data-template-id="card-5-text" class="canva-text font-medium"></p>
+      </div>
+      <div data-template-id="card-6" class="canva-card card-hover p-6 rounded-xl">
+       <i data-lucide="shield-check" class="w-6 h-6 text-green-600 mb-3"></i>
+       <p data-template-id="card-6-text" class="canva-text font-medium"></p>
+      </div>
+      <div data-template-id="card-7" class="canva-card card-hover p-6 rounded-xl sm:col-span-2 lg:col-span-1">
+       <i data-lucide="layout" class="w-6 h-6 text-green-600 mb-3"></i>
+       <p data-template-id="card-7-text" class="canva-text font-medium"></p>
+      </div>
+     </div>
+    </div>
+   </section><!-- O QUE VOCÊ RECEBE -->
+   <section class="w-full px-6 py-20">
+    <div class="max-w-4xl mx-auto">
+     <h2 data-template-id="receive-title" class="canva-text text-center font-bold mb-12"></h2>
+     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+      <div class="flex items-center gap-3 p-4">
+       <i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
+       <p data-template-id="receive-1" class="canva-text"></p>
+      </div>
+      <div class="flex items-center gap-3 p-4">
+       <i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
+       <p data-template-id="receive-2" class="canva-text"></p>
+      </div>
+      <div class="flex items-center gap-3 p-4">
+       <i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
+       <p data-template-id="receive-3" class="canva-text"></p>
+      </div>
+      <div class="flex items-center gap-3 p-4">
+       <i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
+       <p data-template-id="receive-4" class="canva-text"></p>
+      </div>
+      <div class="flex items-center gap-3 p-4">
+       <i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
+       <p data-template-id="receive-5" class="canva-text"></p>
+      </div>
+      <div class="flex items-center gap-3 p-4">
+       <i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
+       <p data-template-id="receive-6" class="canva-text"></p>
+      </div>
+     </div>
+     <div class="text-center">
+      <p data-template-id="receive-highlight" class="canva-text font-semibold"></p>
+     </div>
+    </div>
+   </section><!-- COMO FUNCIONA -->
+   <section class="w-full px-6 py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+     <h2 data-template-id="steps-title" class="canva-text text-center font-bold mb-14"></h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="flex gap-4 items-start">
+       <span class="flex-shrink-0 w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">1</span>
+       <p data-template-id="step-1" class="canva-text pt-2"></p>
+      </div>
+      <div class="flex gap-4 items-start">
+       <span class="flex-shrink-0 w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">2</span>
+       <p data-template-id="step-2" class="canva-text pt-2"></p>
+      </div>
+      <div class="flex gap-4 items-start">
+       <span class="flex-shrink-0 w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">3</span>
+       <p data-template-id="step-3" class="canva-text pt-2"></p>
+      </div>
+      <div class="flex gap-4 items-start">
+       <span class="flex-shrink-0 w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">4</span>
+       <p data-template-id="step-4" class="canva-text pt-2"></p>
+      </div>
+     </div>
+    </div>
+   </section><!-- INVESTIMENTO -->
+   <section class="w-full px-6 py-20">
+    <div class="max-w-2xl mx-auto text-center">
+     <h2 data-template-id="pricing-title" class="canva-text font-bold mb-4"></h2>
+     <p data-template-id="pricing-price" class="canva-text text-5xl font-bold mb-4"></p>
+     <p data-template-id="pricing-desc" class="canva-text mb-10"></p>
+     <div data-template-id="pricing-highlight" class="canva-card rounded-xl p-8 text-left">
+      <p data-template-id="pricing-highlight-text" class="canva-text font-medium mb-4"></p>
+      <div class="space-y-2 text-sm">
+       <p data-template-id="pricing-ex-1" class="canva-text"></p>
+       <p data-template-id="pricing-ex-2" class="canva-text"></p>
+       <p data-template-id="pricing-ex-3" class="canva-text font-bold"></p>
+      </div>
+     </div>
+    </div>
+   </section><!-- FAQ -->
+   <section class="w-full px-6 py-20 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+     <h2 data-template-id="faq-title" class="canva-text text-center font-bold mb-12"></h2>
+     <div id="faq-list" class="space-y-4">
+      <div class="border border-gray-200 rounded-lg"><button type="button" class="faq-toggle w-full text-left p-5 flex justify-between items-center"><span data-template-id="faq-q1" class="canva-text font-medium"></span><i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform"></i></button>
+       <div class="faq-answer px-5 pb-5">
+        <p data-template-id="faq-a1" class="canva-text"></p>
+       </div>
+      </div>
+      <div class="border border-gray-200 rounded-lg"><button type="button" class="faq-toggle w-full text-left p-5 flex justify-between items-center"><span data-template-id="faq-q2" class="canva-text font-medium"></span><i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform"></i></button>
+       <div class="faq-answer px-5 pb-5">
+        <p data-template-id="faq-a2" class="canva-text"></p>
+       </div>
+      </div>
+      <div class="border border-gray-200 rounded-lg"><button type="button" class="faq-toggle w-full text-left p-5 flex justify-between items-center"><span data-template-id="faq-q3" class="canva-text font-medium"></span><i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform"></i></button>
+       <div class="faq-answer px-5 pb-5">
+        <p data-template-id="faq-a3" class="canva-text"></p>
+       </div>
+      </div>
+      <div class="border border-gray-200 rounded-lg"><button type="button" class="faq-toggle w-full text-left p-5 flex justify-between items-center"><span data-template-id="faq-q4" class="canva-text font-medium"></span><i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform"></i></button>
+       <div class="faq-answer px-5 pb-5">
+        <p data-template-id="faq-a4" class="canva-text"></p>
+       </div>
+      </div>
+      <div class="border border-gray-200 rounded-lg"><button type="button" class="faq-toggle w-full text-left p-5 flex justify-between items-center"><span data-template-id="faq-q5" class="canva-text font-medium"></span><i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform"></i></button>
+       <div class="faq-answer px-5 pb-5">
+        <p data-template-id="faq-a5" class="canva-text"></p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- SOLUÇÕES DA PUZZLE -->
+   <section class="w-full px-6 py-20">
+    <div class="max-w-5xl mx-auto">
+     <div class="text-center mb-14">
+      <h2 data-template-id="solutions-title" class="canva-text font-bold mb-4"></h2>
+      <p data-template-id="solutions-intro" class="canva-text max-w-3xl mx-auto leading-relaxed mb-4"></p>
+      <p data-template-id="solutions-desc" class="canva-text max-w-3xl mx-auto leading-relaxed"></p>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div data-template-id="plan-1" class="canva-card card-hover rounded-xl p-8 flex flex-col">
+       <h3 data-template-id="plan-1-title" class="canva-text font-bold text-lg mb-2"></h3>
+       <p data-template-id="plan-1-tagline" class="canva-text text-sm mb-4"></p>
+       <p data-template-id="plan-1-desc" class="canva-text mb-6 flex-grow"></p>
+       <p data-template-id="plan-1-price" class="canva-text font-bold text-2xl mb-6"></p>
+       <div class="mb-6 space-y-2">
+        <p data-template-id="plan-1-includes-label" class="canva-text font-medium text-sm"></p>
+        <ul class="space-y-1">
+         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-1-feature-1" class="canva-text text-sm"></span></li>
+         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-1-feature-2" class="canva-text text-sm"></span></li>
+         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-1-feature-3" class="canva-text text-sm"></span></li>
+         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-1-feature-4" class="canva-text text-sm"></span></li>
+        </ul>
+       </div><button data-template-id="plan-1-button" class="canva-button btn-primary w-full py-3 rounded-lg font-semibold"></button>
+      </div>
+      <div data-template-id="plan-2" class="canva-card card-hover rounded-xl p-8 flex flex-col ring-2 ring-green-600 transform md:scale-105">
+       <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-600 text-white px-4 py-1 rounded-full text-sm font-semibold" data-template-id="plan-2-badge"></div>
+       <h3 data-template-id="plan-2-title" class="canva-text font-bold text-lg mb-2 mt-2"></h3>
+       <p data-template-id="plan-2-tagline" class="canva-text text-sm mb-4"></p>
+       <p data-template-id="plan-2-desc" class="canva-text mb-6 flex-grow"></p>
+       <p data-template-id="plan-2-price" class="canva-text font-bold text-2xl mb-6"></p>
+       <div class="mb-6 space-y-2">
+        <p data-template-id="plan-2-includes-label" class="canva-text font-medium text-sm"></p>
+        <ul class="space-y-1">
+         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-2-feature-1" class="canva-text text-sm"></span></li>
+         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-2-feature-2" class="canva-text text-sm"></span></li>
+         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-2-feature-3" class="canva-text text-sm"></span></li>
+         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-2-feature-4" class="canva-text text-sm"></span></li>
+         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-2-feature-5" class="canva-text text-sm"></span></li>
+         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-2-feature-6" class="canva-text text-sm"></span></li>
+        </ul>
+       </div><button data-template-id="plan-2-button" class="canva-button btn-primary w-full py-3 rounded-lg font-semibold"></button>
+      </div>
+      <div data-template-id="plan-3" class="canva-card card-hover rounded-xl p-8 flex flex-col">
+       <h3 data-template-id="plan-3-title" class="canva-text font-bold text-lg mb-2"></h3>
+       <p data-template-id="plan-3-tagline" class="canva-text text-sm mb-4"></p>
+       <p data-template-id="plan-3-desc" class="canva-text mb-6 flex-grow"></p>
+       <p data-template-id="plan-3-price" class="canva-text font-bold text-2xl mb-6"></p>
+       <div class="mb-6 space-y-2">
+        <p data-template-id="plan-3-includes-label" class="canva-text font-medium text-sm"></p>
+        <ul class="space-y-1">
+         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-3-feature-1" class="canva-text text-sm"></span></li>
+         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-3-feature-2" class="canva-text text-sm"></span></li>
+         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-3-feature-3" class="canva-text text-sm"></span></li>
+         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-3-feature-4" class="canva-text text-sm"></span></li>
+         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-3-feature-5" class="canva-text text-sm"></span></li>
+        </ul>
+       </div><button data-template-id="plan-3-button" class="canva-button btn-primary w-full py-3 rounded-lg font-semibold"></button>
+      </div>
+     </div>
+    </div>
+   </section><!-- BENEFÍCIO EXCLUSIVO -->
+   <section class="w-full px-6 py-20 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+     <h2 data-template-id="exclusive-title" class="canva-text text-center font-bold mb-6"></h2>
+     <p data-template-id="exclusive-desc" class="canva-text text-center mb-10"></p>
+     <div data-template-id="exclusive-box" class="canva-card rounded-xl p-8 mb-8">
+      <div class="space-y-3">
+       <div class="flex justify-between items-center pb-3 border-b border-gray-200">
+        <p data-template-id="exclusive-ex-1" class="canva-text"></p>
+        <p data-template-id="exclusive-ex-1-value" class="canva-text font-bold"></p>
+       </div>
+       <div class="flex justify-between items-center pb-3 border-b border-gray-200">
+        <p data-template-id="exclusive-ex-2" class="canva-text"></p>
+        <p data-template-id="exclusive-ex-2-value" class="canva-text font-bold"></p>
+       </div>
+       <div class="flex justify-between items-center pt-3">
+        <p data-template-id="exclusive-ex-3" class="canva-text font-bold"></p>
+        <p data-template-id="exclusive-ex-3-value" class="canva-text font-bold text-lg text-green-600"></p>
+       </div>
+      </div>
+     </div>
+     <div class="text-center p-6 border-2 border-green-600 rounded-lg">
+      <p data-template-id="exclusive-highlight" class="canva-text font-semibold"></p>
+     </div>
+    </div>
+   </section><!-- CTA FINAL -->
+   <section class="w-full px-6 py-24">
+    <div class="max-w-3xl mx-auto text-center">
+     <h2 data-template-id="final-title" class="canva-text font-bold mb-4"></h2>
+     <p data-template-id="final-subtitle" class="canva-text mb-8"></p><a href="#cta-form" class="inline-block"> <button data-template-id="final-cta" class="canva-button btn-primary px-8 py-4 rounded-lg text-lg font-semibold"></button> </a>
+    </div>
+   </section><!-- FORMULÁRIO -->
+   <section id="cta-form" class="w-full px-6 py-20 bg-gray-50">
+    <div class="max-w-lg mx-auto text-center">
+     <h3 data-template-id="form-title" class="canva-text font-bold mb-8"></h3><a href="https://wa.me/5527996189892?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es.%20Vim%20do%20site." target="_blank" rel="noopener noreferrer"> <button data-template-id="form-submit" type="button" class="canva-button btn-primary w-full py-4 rounded-lg font-semibold text-lg inline-flex items-center justify-center gap-2"> <i data-lucide="message-circle" style="width: 20px; height: 20px;"></i> </button> </a>
+     <p data-template-id="form-subtitle" class="canva-text mt-4"></p>
+    </div>
+   </section>
+  </main><!-- FOOTER -->
+  <footer class="w-full px-6 py-12 border-t border-gray-100">
+   <div class="max-w-5xl mx-auto text-center">
+    <p data-template-id="footer-brand" class="canva-text font-bold mb-1"></p>
+    <p data-template-id="footer-tagline" class="canva-text text-sm mb-1"></p>
+    <p data-template-id="footer-tagline-2" class="canva-text text-sm mb-4"></p>
+    <p data-template-id="footer-message" class="canva-text text-sm max-w-xl mx-auto"></p>
+   </div>
+  </footer>
+  <script src="/_sdk/editing_sdk.js"></script>
   <script>
-  const defaultConfig = {
-    background_color: '#020617',
-    surface_color: '#0f172a',
-    text_color: '#e2e8f0',
-    primary_action_color: '#10b981',
-    secondary_action_color: '#3b82f6',
-    font_family: 'Outfit',
-    font_size: 14,
-    hero_title: 'Seu site está te fazendo <span class="text-emerald-400">perder clientes</span> (e você nem percebe)',
-    hero_subtitle: 'Receba uma análise direta com os erros que estão travando suas vendas',
-    cta_button_text: 'Quero meu Raio-X',
-    plan_essential_price: 'A partir de R$97',
-    plan_strategic_price: 'R$197',
-    plan_advanced_price: 'R$297',
-    landing_page_price: 'A partir de R$167',
-    ebook_price: 'R$29',
-    whatsapp_text: 'Falar no WhatsApp'
-  };
+        lucide.createIcons();
 
-  function applyConfig(config) {
-    const c = { ...defaultConfig, ...config };
-    const font = c.font_family || defaultConfig.font_family;
-    const baseFontStack = 'Outfit, sans-serif';
-    const fontStack = font === 'Outfit' ? baseFontStack : `${font}, ${baseFontStack}`;
-    const baseSize = c.font_size || defaultConfig.font_size;
+        // FAQ accordion
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const answer = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                answer.classList.toggle('open');
+                icon.style.transform = answer.classList.contains('open') ? 'rotate(180deg)' : '';
+            });
+        });
 
-    // Background
-    const wrapper = document.getElementById('app-wrapper');
-    wrapper.style.background = `radial-gradient(ellipse at top, ${c.surface_color} 0%, ${c.background_color} 50%, #000 100%)`;
 
-    // Text color
-    document.querySelectorAll('.font-outfit').forEach(el => {
-      el.style.fontFamily = fontStack;
-    });
-
-    // Font sizes
-    const heroTitle = document.getElementById('hero-title');
-    heroTitle.innerHTML = c.hero_title;
-    heroTitle.style.fontSize = `${baseSize * 2.1}px`;
-    heroTitle.style.color = c.text_color;
-
-    const heroSub = document.getElementById('hero-subtitle');
-    heroSub.textContent = c.hero_subtitle;
-    heroSub.style.fontSize = `${baseSize}px`;
-
-    // CTA
-    const ctaMain = document.getElementById('cta-main');
-    ctaMain.style.background = `linear-gradient(135deg, ${c.primary_action_color}, ${c.primary_action_color}dd)`;
-    document.getElementById('cta-text').textContent = c.cta_button_text;
-
-    // Prices
-    document.getElementById('price-essential').textContent = c.plan_essential_price;
-    document.getElementById('price-strategic').textContent = c.plan_strategic_price;
-    document.getElementById('price-advanced').textContent = c.plan_advanced_price;
-    document.getElementById('price-landing').textContent = c.landing_page_price;
-    document.getElementById('price-ebook').textContent = c.ebook_price;
-
-    // WhatsApp button
-    const waBtn = document.getElementById('whatsapp-btn');
-    waBtn.style.background = `linear-gradient(135deg, ${c.secondary_action_color}, ${c.secondary_action_color}cc)`;
-    document.getElementById('whatsapp-text').textContent = c.whatsapp_text;
-  }
-
-  window.elementSdk.init({
-    defaultConfig,
-    onConfigChange: async (config) => { applyConfig(config); },
-    mapToCapabilities: (config) => ({
-      recolorables: [
-        { get: () => config.background_color || defaultConfig.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
-        { get: () => config.surface_color || defaultConfig.surface_color, set: (v) => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); } },
-        { get: () => config.text_color || defaultConfig.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
-        { get: () => config.primary_action_color || defaultConfig.primary_action_color, set: (v) => { config.primary_action_color = v; window.elementSdk.setConfig({ primary_action_color: v }); } },
-        { get: () => config.secondary_action_color || defaultConfig.secondary_action_color, set: (v) => { config.secondary_action_color = v; window.elementSdk.setConfig({ secondary_action_color: v }); } },
-      ],
-      borderables: [],
-      fontEditable: {
-        get: () => config.font_family || defaultConfig.font_family,
-        set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); }
-      },
-      fontSizeable: {
-        get: () => config.font_size || defaultConfig.font_size,
-        set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); }
-      }
-    }),
-    mapToEditPanelValues: (config) => new Map([
-      ['hero_title', config.hero_title || defaultConfig.hero_title],
-      ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
-      ['cta_button_text', config.cta_button_text || defaultConfig.cta_button_text],
-      ['plan_essential_price', config.plan_essential_price || defaultConfig.plan_essential_price],
-      ['plan_strategic_price', config.plan_strategic_price || defaultConfig.plan_strategic_price],
-      ['plan_advanced_price', config.plan_advanced_price || defaultConfig.plan_advanced_price],
-      ['landing_page_price', config.landing_page_price || defaultConfig.landing_page_price],
-      ['ebook_price', config.ebook_price || defaultConfig.ebook_price],
-      ['whatsapp_text', config.whatsapp_text || defaultConfig.whatsapp_text],
-    ])
-  });
-
-  lucide.createIcons();
-</script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e84983a44c6e638',t:'MTc3NTUxODM3Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0dd5924778a02f8',t:'MTc4MTgxNzczNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+              </html>
