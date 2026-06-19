@@ -1,296 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
- <head><script src="/_sdk/telemetry_sdk.js"></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Puzzle Studio - Raio X de Conversão</title>
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-  <style>
-        body { font-family: 'DM Sans', sans-serif; }
-        .btn-primary { transition: all 0.2s ease; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(22,163,74,0.3); }
-        .card-hover { transition: all 0.2s ease; }
-        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-        .faq-answer.open { max-height: 300px; }
-    </style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="/_sdk/resizing_sdk.js" type="text/javascript"></script>
- </head>
- <body data-template-id="__page-root" class="w-full min-h-screen">
-  <header class="w-full px-6 py-24 md:py-32">
-   <div class="max-w-3xl mx-auto text-center">
-    <h1 data-template-id="hero-title" class="canva-text text-3xl md:text-5xl font-bold leading-tight mb-6"></h1>
-    <p data-template-id="hero-subtitle" class="canva-text text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed"></p><a href="#cta-form" class="inline-block"> <button data-template-id="hero-cta" class="canva-button btn-primary px-8 py-4 rounded-lg text-lg font-semibold"></button> </a>
-    <p data-template-id="hero-support" class="canva-text mt-5 text-sm"></p>
-   </div>
-  </header>
-  <main><!-- PROBLEMA -->
-   <section class="w-full px-6 py-20">
-    <div class="max-w-3xl mx-auto">
-     <h2 data-template-id="problem-title" class="canva-text font-bold mb-6"></h2>
-     <p data-template-id="problem-intro" class="canva-text mb-6"></p>
-     <ul class="space-y-3 mb-6">
-      <li class="flex items-start gap-3"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"></i><span data-template-id="problem-1" class="canva-text"></span></li>
-      <li class="flex items-start gap-3"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"></i><span data-template-id="problem-2" class="canva-text"></span></li>
-      <li class="flex items-start gap-3"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"></i><span data-template-id="problem-3" class="canva-text"></span></li>
-      <li class="flex items-start gap-3"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"></i><span data-template-id="problem-4" class="canva-text"></span></li>
-      <li class="flex items-start gap-3"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"></i><span data-template-id="problem-5" class="canva-text"></span></li>
-      <li class="flex items-start gap-3"><i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"></i><span data-template-id="problem-6" class="canva-text"></span></li>
-     </ul>
-     <p data-template-id="problem-conclusion" class="canva-text"></p>
-    </div>
-   </section><!-- ANÁLISE -->
-   <section class="w-full px-6 py-20 bg-gray-50">
-    <div class="max-w-5xl mx-auto">
-     <h2 data-template-id="analysis-title" class="canva-text text-center font-bold mb-12"></h2>
-     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div data-template-id="card-1" class="canva-card card-hover p-6 rounded-xl"><i data-lucide="eye" class="w-6 h-6 text-green-600 mb-3"></i>
-       <p data-template-id="card-1-text" class="canva-text font-medium"></p>
-      </div>
-      <div data-template-id="card-2" class="canva-card card-hover p-6 rounded-xl"><i data-lucide="target" class="w-6 h-6 text-green-600 mb-3"></i>
-       <p data-template-id="card-2-text" class="canva-text font-medium"></p>
-      </div>
-      <div data-template-id="card-3" class="canva-card card-hover p-6 rounded-xl"><i data-lucide="mouse-pointer-click" class="w-6 h-6 text-green-600 mb-3"></i>
-       <p data-template-id="card-3-text" class="canva-text font-medium"></p>
-      </div>
-      <div data-template-id="card-4" class="canva-card card-hover p-6 rounded-xl"><i data-lucide="smartphone" class="w-6 h-6 text-green-600 mb-3"></i>
-       <p data-template-id="card-4-text" class="canva-text font-medium"></p>
-      </div>
-      <div data-template-id="card-5" class="canva-card card-hover p-6 rounded-xl"><i data-lucide="zap" class="w-6 h-6 text-green-600 mb-3"></i>
-       <p data-template-id="card-5-text" class="canva-text font-medium"></p>
-      </div>
-      <div data-template-id="card-6" class="canva-card card-hover p-6 rounded-xl"><i data-lucide="shield-check" class="w-6 h-6 text-green-600 mb-3"></i>
-       <p data-template-id="card-6-text" class="canva-text font-medium"></p>
-      </div>
-      <div data-template-id="card-7" class="canva-card card-hover p-6 rounded-xl sm:col-span-2 lg:col-span-1"><i data-lucide="layout" class="w-6 h-6 text-green-600 mb-3"></i>
-       <p data-template-id="card-7-text" class="canva-text font-medium"></p>
-      </div>
-     </div>
-    </div>
-   </section><!-- O QUE RECEBE -->
-   <section class="w-full px-6 py-20">
-    <div class="max-w-4xl mx-auto">
-     <h2 data-template-id="receive-title" class="canva-text text-center font-bold mb-12"></h2>
-     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-      <div class="flex items-center gap-3 p-4">
-       <i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
-       <p data-template-id="receive-1" class="canva-text"></p>
-      </div>
-      <div class="flex items-center gap-3 p-4">
-       <i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
-       <p data-template-id="receive-2" class="canva-text"></p>
-      </div>
-      <div class="flex items-center gap-3 p-4">
-       <i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
-       <p data-template-id="receive-3" class="canva-text"></p>
-      </div>
-      <div class="flex items-center gap-3 p-4">
-       <i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
-       <p data-template-id="receive-4" class="canva-text"></p>
-      </div>
-      <div class="flex items-center gap-3 p-4">
-       <i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
-       <p data-template-id="receive-5" class="canva-text"></p>
-      </div>
-      <div class="flex items-center gap-3 p-4">
-       <i data-lucide="check-circle" class="w-5 h-5 text-green-600 flex-shrink-0"></i>
-       <p data-template-id="receive-6" class="canva-text"></p>
-      </div>
-     </div>
-     <div class="text-center">
-      <p data-template-id="receive-highlight" class="canva-text font-semibold"></p>
-     </div>
-    </div>
-   </section><!-- COMO FUNCIONA -->
-   <section class="w-full px-6 py-20 bg-gray-50">
-    <div class="max-w-4xl mx-auto">
-     <h2 data-template-id="steps-title" class="canva-text text-center font-bold mb-14"></h2>
-     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="flex gap-4 items-start"><span class="flex-shrink-0 w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">1</span>
-       <p data-template-id="step-1" class="canva-text pt-2"></p>
-      </div>
-      <div class="flex gap-4 items-start"><span class="flex-shrink-0 w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">2</span>
-       <p data-template-id="step-2" class="canva-text pt-2"></p>
-      </div>
-      <div class="flex gap-4 items-start"><span class="flex-shrink-0 w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">3</span>
-       <p data-template-id="step-3" class="canva-text pt-2"></p>
-      </div>
-      <div class="flex gap-4 items-start"><span class="flex-shrink-0 w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">4</span>
-       <p data-template-id="step-4" class="canva-text pt-2"></p>
-      </div>
-     </div>
-    </div>
-   </section><!-- INVESTIMENTO -->
-   <section class="w-full px-6 py-20">
-    <div class="max-w-2xl mx-auto text-center">
-     <h2 data-template-id="pricing-title" class="canva-text font-bold mb-4"></h2>
-     <p data-template-id="pricing-price" class="canva-text text-5xl font-bold mb-4"></p>
-     <p data-template-id="pricing-desc" class="canva-text mb-10"></p>
-     <div data-template-id="pricing-highlight" class="canva-card rounded-xl p-8 text-left">
-      <p data-template-id="pricing-highlight-text" class="canva-text font-medium mb-4"></p>
-      <div class="space-y-2 text-sm">
-       <p data-template-id="pricing-ex-1" class="canva-text"></p>
-       <p data-template-id="pricing-ex-2" class="canva-text"></p>
-       <p data-template-id="pricing-ex-3" class="canva-text font-bold"></p>
-      </div>
-     </div>
-    </div>
-   </section><!-- FAQ -->
-   <section class="w-full px-6 py-20 bg-gray-50">
-    <div class="max-w-3xl mx-auto">
-     <h2 data-template-id="faq-title" class="canva-text text-center font-bold mb-12"></h2>
-     <div id="faq-list" class="space-y-4">
-      <div class="border border-gray-200 rounded-lg bg-white"><button type="button" class="faq-toggle w-full text-left p-5 flex justify-between items-center"> <span data-template-id="faq-q1" class="canva-text font-medium"></span> <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform"></i> </button>
-       <div class="faq-answer px-5 pb-5">
-        <p data-template-id="faq-a1" class="canva-text"></p>
-       </div>
-      </div>
-      <div class="border border-gray-200 rounded-lg bg-white"><button type="button" class="faq-toggle w-full text-left p-5 flex justify-between items-center"> <span data-template-id="faq-q2" class="canva-text font-medium"></span> <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform"></i> </button>
-       <div class="faq-answer px-5 pb-5">
-        <p data-template-id="faq-a2" class="canva-text"></p>
-       </div>
-      </div>
-      <div class="border border-gray-200 rounded-lg bg-white"><button type="button" class="faq-toggle w-full text-left p-5 flex justify-between items-center"> <span data-template-id="faq-q3" class="canva-text font-medium"></span> <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform"></i> </button>
-       <div class="faq-answer px-5 pb-5">
-        <p data-template-id="faq-a3" class="canva-text"></p>
-       </div>
-      </div>
-      <div class="border border-gray-200 rounded-lg bg-white"><button type="button" class="faq-toggle w-full text-left p-5 flex justify-between items-center"> <span data-template-id="faq-q4" class="canva-text font-medium"></span> <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform"></i> </button>
-       <div class="faq-answer px-5 pb-5">
-        <p data-template-id="faq-a4" class="canva-text"></p>
-       </div>
-      </div>
-      <div class="border border-gray-200 rounded-lg bg-white"><button type="button" class="faq-toggle w-full text-left p-5 flex justify-between items-center"> <span data-template-id="faq-q5" class="canva-text font-medium"></span> <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 transition-transform"></i> </button>
-       <div class="faq-answer px-5 pb-5">
-        <p data-template-id="faq-a5" class="canva-text"></p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- SOLUÇÕES -->
-   <section class="w-full px-6 py-20">
-    <div class="max-w-5xl mx-auto">
-     <div class="text-center mb-14">
-      <h2 data-template-id="solutions-title" class="canva-text font-bold mb-4"></h2>
-      <p data-template-id="solutions-intro" class="canva-text max-w-3xl mx-auto leading-relaxed mb-4"></p>
-      <p data-template-id="solutions-desc" class="canva-text max-w-3xl mx-auto leading-relaxed"></p>
-     </div>
-     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div data-template-id="plan-1" class="canva-card card-hover rounded-xl p-8 flex flex-col border border-gray-200">
-       <h3 data-template-id="plan-1-title" class="canva-text font-bold text-lg mb-2"></h3>
-       <p data-template-id="plan-1-tagline" class="canva-text text-sm mb-4"></p>
-       <p data-template-id="plan-1-desc" class="canva-text mb-6 flex-grow"></p>
-       <p data-template-id="plan-1-price" class="canva-text font-bold text-2xl mb-6"></p>
-       <div class="mb-6 space-y-2">
-        <p data-template-id="plan-1-includes-label" class="canva-text font-medium text-sm"></p>
-        <ul class="space-y-1">
-         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-1-feature-1" class="canva-text text-sm"></span></li>
-         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-1-feature-2" class="canva-text text-sm"></span></li>
-         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-1-feature-3" class="canva-text text-sm"></span></li>
-         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-1-feature-4" class="canva-text text-sm"></span></li>
-        </ul>
-       </div><button data-template-id="plan-1-button" class="canva-button btn-primary w-full py-3 rounded-lg font-semibold"></button>
-      </div>
-      <div data-template-id="plan-2" class="canva-card card-hover rounded-xl p-8 flex flex-col relative ring-2 ring-green-600 md:scale-105">
-       <div data-template-id="plan-2-badge" class="canva-text absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-green-600 text-white px-4 py-1 rounded-full text-sm font-semibold"></div>
-       <h3 data-template-id="plan-2-title" class="canva-text font-bold text-lg mb-2 mt-2"></h3>
-       <p data-template-id="plan-2-tagline" class="canva-text text-sm mb-4"></p>
-       <p data-template-id="plan-2-desc" class="canva-text mb-6 flex-grow"></p>
-       <p data-template-id="plan-2-price" class="canva-text font-bold text-2xl mb-6"></p>
-       <div class="mb-6 space-y-2">
-        <p data-template-id="plan-2-includes-label" class="canva-text font-medium text-sm"></p>
-        <ul class="space-y-1">
-         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-2-feature-1" class="canva-text text-sm"></span></li>
-         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-2-feature-2" class="canva-text text-sm"></span></li>
-         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-2-feature-3" class="canva-text text-sm"></span></li>
-         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-2-feature-4" class="canva-text text-sm"></span></li>
-         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-2-feature-5" class="canva-text text-sm"></span></li>
-         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-2-feature-6" class="canva-text text-sm"></span></li>
-        </ul>
-       </div><button data-template-id="plan-2-button" class="canva-button btn-primary w-full py-3 rounded-lg font-semibold"></button>
-      </div>
-      <div data-template-id="plan-3" class="canva-card card-hover rounded-xl p-8 flex flex-col border border-gray-200">
-       <h3 data-template-id="plan-3-title" class="canva-text font-bold text-lg mb-2"></h3>
-       <p data-template-id="plan-3-tagline" class="canva-text text-sm mb-4"></p>
-       <p data-template-id="plan-3-desc" class="canva-text mb-6 flex-grow"></p>
-       <p data-template-id="plan-3-price" class="canva-text font-bold text-2xl mb-6"></p>
-       <div class="mb-6 space-y-2">
-        <p data-template-id="plan-3-includes-label" class="canva-text font-medium text-sm"></p>
-        <ul class="space-y-1">
-         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-3-feature-1" class="canva-text text-sm"></span></li>
-         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-3-feature-2" class="canva-text text-sm"></span></li>
-         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-3-feature-3" class="canva-text text-sm"></span></li>
-         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-3-feature-4" class="canva-text text-sm"></span></li>
-         <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i><span data-template-id="plan-3-feature-5" class="canva-text text-sm"></span></li>
-        </ul>
-       </div><button data-template-id="plan-3-button" class="canva-button btn-primary w-full py-3 rounded-lg font-semibold"></button>
-      </div>
-     </div>
-    </div>
-   </section><!-- BENEFÍCIO EXCLUSIVO -->
-   <section class="w-full px-6 py-20 bg-gray-50">
-    <div class="max-w-3xl mx-auto">
-     <h2 data-template-id="exclusive-title" class="canva-text text-center font-bold mb-6"></h2>
-     <p data-template-id="exclusive-desc" class="canva-text text-center mb-10"></p>
-     <div data-template-id="exclusive-box" class="canva-card rounded-xl p-8 mb-8">
-      <div class="space-y-3">
-       <div class="flex justify-between items-center pb-3 border-b border-gray-200">
-        <p data-template-id="exclusive-ex-1" class="canva-text"></p>
-        <p data-template-id="exclusive-ex-1-value" class="canva-text font-bold"></p>
-       </div>
-       <div class="flex justify-between items-center pb-3 border-b border-gray-200">
-        <p data-template-id="exclusive-ex-2" class="canva-text"></p>
-        <p data-template-id="exclusive-ex-2-value" class="canva-text font-bold"></p>
-       </div>
-       <div class="flex justify-between items-center pt-3">
-        <p data-template-id="exclusive-ex-3" class="canva-text font-bold"></p>
-        <p data-template-id="exclusive-ex-3-value" class="canva-text font-bold text-lg"></p>
-       </div>
-      </div>
-     </div>
-     <div class="text-center p-6 border-2 border-green-600 rounded-lg">
-      <p data-template-id="exclusive-highlight" class="canva-text font-semibold"></p>
-     </div>
-    </div>
-   </section><!-- CTA FINAL -->
-   <section class="w-full px-6 py-24">
-    <div class="max-w-3xl mx-auto text-center">
-     <h2 data-template-id="final-title" class="canva-text font-bold mb-4"></h2>
-     <p data-template-id="final-subtitle" class="canva-text mb-8"></p><a href="#cta-form" class="inline-block"> <button data-template-id="final-cta" class="canva-button btn-primary px-8 py-4 rounded-lg text-lg font-semibold"></button> </a>
-    </div>
-   </section><!-- FORMULÁRIO -->
-   <section id="cta-form" class="w-full px-6 py-20 bg-gray-50">
-    <div class="max-w-lg mx-auto text-center">
-     <h3 data-template-id="form-title" class="canva-text font-bold mb-8"></h3><a href="https://wa.me/5527996189892?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es.%20Vim%20do%20site." target="_blank" rel="noopener noreferrer"> <button data-template-id="form-submit" type="button" class="canva-button btn-primary w-full py-4 rounded-lg font-semibold text-lg inline-flex items-center justify-center gap-2"> <i data-lucide="message-circle" style="width:20px;height:20px;"></i> </button> </a>
-     <p data-template-id="form-subtitle" class="canva-text mt-4"></p>
-    </div>
-   </section>
-  </main>
-  <footer class="w-full px-6 py-12 border-t border-gray-100">
-   <div class="max-w-5xl mx-auto text-center">
-    <p data-template-id="footer-brand" class="canva-text font-bold mb-1"></p>
-    <p data-template-id="footer-tagline" class="canva-text text-sm mb-1"></p>
-    <p data-template-id="footer-tagline-2" class="canva-text text-sm mb-4"></p>
-    <p data-template-id="footer-message" class="canva-text text-sm max-w-xl mx-auto"></p>
-   </div>
-  </footer>
-  <script src="/_sdk/editing_sdk.js"></script>
-  <script>
-        lucide.createIcons();
-
-        document.querySelectorAll('.faq-toggle').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                var answer = btn.nextElementSibling;
-                var icon = btn.querySelector('i');
-                answer.classList.toggle('open');
-                if (icon) {
-                    icon.style.transform = answer.classList.contains('open') ? 'rotate(180deg)' : '';
-                }
-            });
-        });
-    </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0e4083bb470d7d7',t:'MTc4MTg4NzgyMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raio X de Conversão | Puzzle Studio</title>
+<meta name="description" content="Descubra por que seu site não gera contatos. Receba um diagnóstico completo e encontre os gargalos que estão impedindo sua empresa de gerar mais oportunidades.">
+<meta property="og:title" content="Raio X de Conversão | Puzzle Studio">
+<meta property="og:description" content="Diagnóstico personalizado para identificar problemas de conversão no seu site.">
+<meta property="og:type" content="website">
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800">
+<header class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
+ <div class="font-bold text-2xl">Puzzle Studio</div>
+ <a href="#formulario" class="bg-green-600 text-white px-5 py-3 rounded-lg">Solicitar Diagnóstico</a>
+</header>
+<section class="max-w-6xl mx-auto px-6 py-20 text-center">
+ <h1 class="text-5xl font-bold mb-6">Seu site gera oportunidades ou apenas existe na internet?</h1>
+ <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+ Descubra os erros que podem estar afastando clientes sem você perceber.
+ Receba um diagnóstico completo e um plano de ação prático.
+ </p>
+ <a href="#formulario" class="bg-green-600 text-white px-8 py-4 rounded-xl text-lg">Quero Descobrir</a>
+</section>
+<section class="bg-gray-50 py-20">
+ <div class="max-w-6xl mx-auto px-6">
+ <h2 class="text-4xl font-bold text-center mb-12">O que analisamos</h2>
+ <div class="grid md:grid-cols-3 gap-6">
+ <div class="p-6 bg-white rounded-xl shadow">Clareza da Oferta</div>
+ <div class="p-6 bg-white rounded-xl shadow">Conversão</div>
+ <div class="p-6 bg-white rounded-xl shadow">CTAs</div>
+ <div class="p-6 bg-white rounded-xl shadow">Experiência Mobile</div>
+ <div class="p-6 bg-white rounded-xl shadow">Velocidade</div>
+ <div class="p-6 bg-white rounded-xl shadow">Confiança e Credibilidade</div>
+ </div>
+</section>
+<section class="max-w-6xl mx-auto px-6 py-20">
+ <h2 class="text-4xl font-bold text-center mb-12">Como funciona</h2>
+ <div class="grid md:grid-cols-4 gap-6 text-center">
+ <div>1. Você envia seu site</div>
+ <div>2. Fazemos a análise</div>
+ <div>3. Entregamos relatório e vídeo</div>
+ <div>4. Você recebe um plano de ação</div>
+ </div>
+</section>
+<section class="bg-green-50 py-20">
+ <div class="max-w-5xl mx-auto px-6">
+ <h2 class="text-4xl font-bold text-center mb-12">Planos de Landing Page</h2>
+ <div class="grid md:grid-cols-3 gap-6">
+ <div class="border p-6 rounded-xl">
+ <h3 class="font-bold text-xl">Start</h3>
+ <p class="text-3xl font-bold mt-4">R$997</p>
+ </div>
+ <div class="border-2 border-green-600 p-6 rounded-xl">
+ <h3 class="font-bold text-xl">Crescimento ■</h3>
+ <p class="text-3xl font-bold mt-4">R$1497</p>
+ </div>
+ <div class="border p-6 rounded-xl">
+ <h3 class="font-bold text-xl">Escala</h3>
+ <p class="text-3xl font-bold mt-4">R$2497</p>
+ </div>
+</section><section class="max-w-4xl mx-auto px-6 py-20 text-center">
+ <p class="text-5xl font-bold text-green-600">R$97</p>
+ <h2 class="text-4xl font-bold mb-6">Diagnóstico de Conversão</h2>
+ <p class="mt-6 text-lg">
+ o valor investido será abatido integralmente do projeto.
+ Se contratar uma Landing Page em até 7 dias corridos após receber o diagnóstico,
+ </p>
+ <div class="mt-6 p-6 bg-gray-100 rounded-xl">
+ Diagnóstico: R$97<br>
+ Landing Page Crescimento: R$1497<br>
+ <strong>Você paga apenas R$1400</strong>
+ </div>
+</section>
+<section id="formulario" class="bg-gray-50 py-20">
+ </div>
+ <div class="max-w-2xl mx-auto px-6">
+ </form>
+ <form onsubmit="enviarWhats(event)" class="space-y-4">
+ <h2 class="text-3xl font-bold text-center mb-8">Solicite seu Diagnóstico</h2>
+ <input id="site" class="w-full border p-3 rounded" placeholder="Site">
+ <input id="empresa" class="w-full border p-3 rounded" placeholder="Empresa">
+ <input id="nome" class="w-full border p-3 rounded" placeholder="Nome" required>
+ <input id="email" type="email" class="w-full border p-3 rounded" placeholder="E-mail">
+ <button class="w-full bg-green-600 text-white p-4 rounded">Solicitar Diagnóstico</button>
+</section>
+<script>
+function enviarWhats(e){
+ e.preventDefault();
+ const nome=document.getElementById('nome').value;
+ const site=document.getElementById('site').value;
+ const email=document.getElementById('email').value;
+ const empresa=document.getElementById('empresa').value;
+ const msg=`Olá, quero solicitar o Raio X de Conversão.%0A%0ANome: ${nome}%0AEmpresa: ${empresa}%0AEmail: ${email}%0ASite: ${site}`;
+ window.open(`https://wa.me/5527996189892?text=${msg}`,'_blank');
+}
+</script>
+</body>
  </html>
