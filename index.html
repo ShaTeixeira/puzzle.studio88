@@ -1,100 +1,869 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raio X de Conversão | Puzzle Studio</title>
-<meta name="description" content="Descubra por que seu site não gera contatos. Receba um diagnóstico completo e encontre os gargalos que estão impedindo sua empresa de gerar mais oportunidades.">
-<meta property="og:title" content="Raio X de Conversão | Puzzle Studio">
-<meta property="og:description" content="Diagnóstico personalizado para identificar problemas de conversão no seu site.">
-<meta property="og:type" content="website">
-<script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint WhatsApp que Vende | Puzzle Studio</title>
+    <meta name="description" content="Descubra onde seu negócio está perdendo clientes e reorganize sua jornada de conversão até o WhatsApp em até 48 horas.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #FAFAFA;
+            --text-main: #111111;
+            --text-muted: #555555;
+            --card-bg: #FFFFFF;
+            --border-color: #EAEAEA;
+            --neon-green: #00FF66;
+            --neon-green-hover: #00DB58;
+            --black-bg: #0A0A0A;
+            --red-alert: #FF3366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+        h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+
+        @media (min-width: 768px) {
+            h1 { font-size: 4rem; }
+            h2 { font-size: 2.5rem; }
+        }
+
+        p { margin-bottom: 1rem; }
+        
+        .text-muted { color: var(--text-muted); }
+        .text-center { text-align: center; }
+
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        @media (min-width: 768px) {
+            .section { padding: 120px 0; }
+        }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr; gap: 24px; }
+        .grid-4 { display: grid; grid-template-columns: 1fr; gap: 24px; }
+        
+        @media (min-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr 1fr; }
+            .grid-3 { grid-template-columns: repeat(3, 1fr); }
+            .grid-4 { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        /* Components */
+        .btn {
+            display: inline-block;
+            background-color: var(--neon-green);
+            color: var(--text-main);
+            font-weight: 700;
+            font-size: 1.125rem;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--neon-green);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--neon-green-hover);
+            border-color: var(--neon-green-hover);
+            transform: translateY(-2px);
+        }
+
+        .microcopy {
+            display: block;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: 12px;
+            font-weight: 500;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 32px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .list-check li, .list-cross li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 16px;
+            list-style: none;
+        }
+
+        .list-check li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--neon-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .list-cross li::before {
+            content: "✕";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--red-alert);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Header */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--neon-green);
+            border-radius: 50%;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            max-width: 900px;
+            margin: 0 auto 24px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--text-muted);
+        }
+
+        /* Journey Flow */
+        .journey-flow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .journey-step {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .journey-arrow {
+            color: var(--text-muted);
+            margin: 8px 0;
+            font-size: 1.5rem;
+            z-index: 1;
+        }
+        
+        .journey-dropoff {
+            color: var(--red-alert);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-left: 20px;
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            white-space: nowrap;
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .journey-dropoff { display: block; }
+        }
+
+        /* Offer Box */
+        .offer-box {
+            background-color: var(--black-bg);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 16px;
+            text-align: center;
+            border-top: 4px solid var(--neon-green);
+        }
+
+        .offer-box h2 {
+            color: white;
+        }
+
+        .offer-price {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--neon-green);
+            line-height: 1;
+            margin: 24px 0;
+        }
+
+        .offer-box .list-check {
+            text-align: left;
+            max-width: 400px;
+            margin: 40px auto;
+        }
+        
+        .offer-box .list-check li {
+            color: #EAEAEA;
+        }
+
+        /* Accordion FAQ */
+        details {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 24px;
+            font-weight: 600;
+            font-size: 1.125rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--neon-green);
+        }
+
+        details[open] summary::after {
+            content: "−";
+        }
+
+        details p {
+            padding: 0 24px 24px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black-bg);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        footer .logo {
+            justify-content: center;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        footer p {
+            color: #888;
+        }
+
+        .footer-links {
+            margin-top: 32px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .footer-links a:hover {
+            color: var(--neon-green);
+        }
+
+        /* Utility */
+        .highlight {
+            position: relative;
+            display: inline-block;
+        }
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: var(--neon-green);
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            margin: 5% auto;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.1);
+        }
+
+        .modal-content h2 { margin-bottom: 24px; font-size: 2rem; color: var(--text-main); }
+        .modal-content h3 { margin-top: 24px; margin-bottom: 12px; font-size: 1.25rem; color: var(--text-main); }
+        .modal-content p, .modal-content ul { margin-bottom: 16px; color: var(--text-muted); font-size: 0.95rem; }
+        .modal-content ul { padding-left: 24px; }
+        .modal-content li { margin-bottom: 8px; }
+
+        .close-btn {
+            color: var(--text-muted);
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: var(--red-alert);
+        }
+    </style>
 </head>
-<body class="bg-white text-gray-800">
-<header class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
- <div class="font-bold text-2xl">Puzzle Studio</div>
- <a href="#formulario" class="bg-green-600 text-white px-5 py-3 rounded-lg">Solicitar Diagnóstico</a>
-</header>
-<section class="max-w-6xl mx-auto px-6 py-20 text-center">
- <h1 class="text-5xl font-bold mb-6">Seu site gera oportunidades ou apenas existe na internet?</h1>
- <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
- Descubra os erros que podem estar afastando clientes sem você perceber.
- Receba um diagnóstico completo e um plano de ação prático.
- </p>
- <a href="#formulario" class="bg-green-600 text-white px-8 py-4 rounded-xl text-lg">Quero Descobrir</a>
-</section>
-<section class="bg-gray-50 py-20">
- <div class="max-w-6xl mx-auto px-6">
- <h2 class="text-4xl font-bold text-center mb-12">O que analisamos</h2>
- <div class="grid md:grid-cols-3 gap-6">
- <div class="p-6 bg-white rounded-xl shadow">Clareza da Oferta</div>
- <div class="p-6 bg-white rounded-xl shadow">Conversão</div>
- <div class="p-6 bg-white rounded-xl shadow">CTAs</div>
- <div class="p-6 bg-white rounded-xl shadow">Experiência Mobile</div>
- <div class="p-6 bg-white rounded-xl shadow">Velocidade</div>
- <div class="p-6 bg-white rounded-xl shadow">Confiança e Credibilidade</div>
- </div>
-</section>
-<section class="max-w-6xl mx-auto px-6 py-20">
- <h2 class="text-4xl font-bold text-center mb-12">Como funciona</h2>
- <div class="grid md:grid-cols-4 gap-6 text-center">
- <div>1. Você envia seu site</div>
- <div>2. Fazemos a análise</div>
- <div>3. Entregamos relatório e vídeo</div>
- <div>4. Você recebe um plano de ação</div>
- </div>
-</section>
-<section class="bg-green-50 py-20">
- <div class="max-w-5xl mx-auto px-6">
- <h2 class="text-4xl font-bold text-center mb-12">Planos de Landing Page</h2>
- <div class="grid md:grid-cols-3 gap-6">
- <div class="border p-6 rounded-xl">
- <h3 class="font-bold text-xl">Start</h3>
- <p class="text-3xl font-bold mt-4">R$997</p>
- </div>
- <div class="border-2 border-green-600 p-6 rounded-xl">
- <h3 class="font-bold text-xl">Crescimento ■</h3>
- <p class="text-3xl font-bold mt-4">R$1497</p>
- </div>
- <div class="border p-6 rounded-xl">
- <h3 class="font-bold text-xl">Escala</h3>
- <p class="text-3xl font-bold mt-4">R$2497</p>
- </div>
-</section><section class="max-w-4xl mx-auto px-6 py-20 text-center">
- <p class="text-5xl font-bold text-green-600">R$97</p>
- <h2 class="text-4xl font-bold mb-6">Diagnóstico de Conversão</h2>
- <p class="mt-6 text-lg">
- o valor investido será abatido integralmente do projeto.
- Se contratar uma Landing Page em até 7 dias corridos após receber o diagnóstico,
- </p>
- <div class="mt-6 p-6 bg-gray-100 rounded-xl">
- Diagnóstico: R$97<br>
- Landing Page Crescimento: R$1497<br>
- <strong>Você paga apenas R$1400</strong>
- </div>
-</section>
-<section id="formulario" class="bg-gray-50 py-20">
- </div>
- <div class="max-w-2xl mx-auto px-6">
- </form>
- <form onsubmit="enviarWhats(event)" class="space-y-4">
- <h2 class="text-3xl font-bold text-center mb-8">Solicite seu Diagnóstico</h2>
- <input id="site" class="w-full border p-3 rounded" placeholder="Site">
- <input id="empresa" class="w-full border p-3 rounded" placeholder="Empresa">
- <input id="nome" class="w-full border p-3 rounded" placeholder="Nome" required>
- <input id="email" type="email" class="w-full border p-3 rounded" placeholder="E-mail">
- <button class="w-full bg-green-600 text-white p-4 rounded">Solicitar Diagnóstico</button>
-</section>
-<script>
-function enviarWhats(e){
- e.preventDefault();
- const nome=document.getElementById('nome').value;
- const site=document.getElementById('site').value;
- const email=document.getElementById('email').value;
- const empresa=document.getElementById('empresa').value;
- const msg=`Olá, quero solicitar o Raio X de Conversão.%0A%0ANome: ${nome}%0AEmpresa: ${empresa}%0AEmail: ${email}%0ASite: ${site}`;
- window.open(`https://wa.me/5527996189892?text=${msg}`,'_blank');
-}
-</script>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                Puzzle Studio <div class="logo-dot"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Seu negócio pode estar perdendo clientes antes mesmo deles chegarem ao WhatsApp.</h1>
+            <p>Em até 48 horas, a Puzzle identifica os principais pontos que estão fazendo potenciais clientes desistirem e reorganiza sua jornada até o contato.</p>
+            
+            <a href="https://wa.me/5527996189892?text=Ol%C3%A1!%20Gostaria%20de%20garantir%20meu%20Sprint%20WhatsApp%20que%20Vende." target="_blank" class="btn">Quero meu Sprint por R$297</a>
+            <span class="microcopy">10 primeiras vagas • entrega em até 48h</span>
+        </div>
+    </section>
+
+    <!-- 2. PROBLEMA -->
+    <section class="section" style="background-color: #F0F0F0;">
+        <div class="container text-center">
+            <h2>Talvez o problema não seja <span class="highlight">falta de clientes.</span></h2>
+            <p class="text-muted" style="max-width: 600px; margin: 0 auto;">Pessoas interessadas chegam todos os dias, mas vazam por brechas invisíveis no seu processo.</p>
+            
+            <div class="journey-flow">
+                <div class="journey-step">Instagram / Google</div>
+                <div class="journey-arrow">↓</div>
+                
+                <div class="journey-step">
+                    Perfil
+                    <span class="journey-dropoff">← Perfil não deixa claro o que fazer</span>
+                </div>
+                <div class="journey-arrow">↓</div>
+                
+                <div class="journey-step">
+                    Oferta
+                    <span class="journey-dropoff">← Oferta pouco convincente</span>
+                </div>
+                <div class="journey-arrow">↓</div>
+                
+                <div class="journey-step">
+                    WhatsApp
+                    <span class="journey-dropoff">← Link quebrado ou CTA fraco</span>
+                </div>
+                <div class="journey-arrow">↓</div>
+                
+                <div class="journey-step">
+                    Atendimento
+                    <span class="journey-dropoff">← Atendimento demora ou sem estrutura</span>
+                </div>
+                <div class="journey-arrow">↓</div>
+                
+                <div class="journey-step" style="border-color: var(--neon-green); background-color: #F5FFF8;">
+                    Venda
+                    <span class="journey-dropoff" style="color: var(--text-muted);">← Cliente pergunta preço e some (sem follow-up)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. DIAGNÓSTICO -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 60px;">
+                <h2>O que analisamos no Sprint</h2>
+                <p class="text-muted">Nosso objetivo é encontrar exatamente os pontos que fazem pessoas interessadas desistirem de comprar de você.</p>
+            </div>
+
+            <div class="grid-4">
+                <div class="card">
+                    <span class="icon">🔎</span>
+                    <h3>Presença digital</h3>
+                </div>
+                <div class="card">
+                    <span class="icon">📱</span>
+                    <h3>Instagram</h3>
+                </div>
+                <div class="card">
+                    <span class="icon">💬</span>
+                    <h3>WhatsApp</h3>
+                </div>
+                <div class="card">
+                    <span class="icon">🎯</span>
+                    <h3>Oferta</h3>
+                </div>
+                <div class="card">
+                    <span class="icon">🧲</span>
+                    <h3>CTA</h3>
+                </div>
+                <div class="card">
+                    <span class="icon">🌐</span>
+                    <h3>Landing Page</h3>
+                    <p class="text-muted" style="font-size: 0.875rem;">(quando existir)</p>
+                </div>
+                <div class="card">
+                    <span class="icon">📈</span>
+                    <h3>Jornada de conversão</h3>
+                </div>
+                <div class="card">
+                    <span class="icon">🔁</span>
+                    <h3>Follow-up</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. O QUE O CLIENTE RECEBE -->
+    <section class="section" style="background-color: #F0F0F0;">
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <div>
+                    <h2>Em até 48 horas, você recebe um plano prático para corrigir os vazamentos.</h2>
+                    <p style="font-weight: 500; font-size: 1.125rem; margin-top: 24px; margin-bottom: 24px;">Você não recebe um PDF genérico cheio de teoria. Recebe recomendações específicas para o seu negócio.</p>
+                    <a href="https://wa.me/5527996189892?text=Ol%C3%A1!%20Gostaria%20de%20garantir%20meu%20Sprint%20WhatsApp%20que%20Vende." target="_blank" class="btn">Quero meu Sprint</a>
+                </div>
+                <div class="card">
+                    <ul class="list-check">
+                        <li>Diagnóstico dos principais pontos de perda</li>
+                        <li>Estrutura da oferta</li>
+                        <li>Roteiro de atendimento pelo WhatsApp</li>
+                        <li>Mensagem inicial estratégica</li>
+                        <li>Respostas para objeções comuns</li>
+                        <li>Sequência de follow-up (acompanhamento)</li>
+                        <li>5 conteúdos de venda</li>
+                        <li>Recomendações práticas de conversão</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ANTES E DEPOIS -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 60px;">A diferença na prática</h2>
+            
+            <div class="grid-2">
+                <div class="card" style="border-top: 4px solid var(--red-alert);">
+                    <h3 style="color: var(--red-alert); margin-bottom: 24px;">COMO É HOJE (ANTES)</h3>
+                    <div style="display: flex; flex-direction: column; gap: 12px; color: var(--text-muted);">
+                        <p>Pessoa vê seu perfil</p>
+                        <p>↓</p>
+                        <p>Não entende exatamente o que comprar</p>
+                        <p>↓</p>
+                        <p>Não encontra CTA claro</p>
+                        <p>↓</p>
+                        <p>Chama no WhatsApp</p>
+                        <p>↓</p>
+                        <p>Pergunta preço</p>
+                        <p>↓</p>
+                        <p><strong>Some</strong></p>
+                    </div>
+                </div>
+
+                <div class="card" style="border-top: 4px solid var(--neon-green); background-color: #FAFFFC;">
+                    <h3 style="color: #00BA4A; margin-bottom: 24px;">COM O SPRINT (DEPOIS)</h3>
+                    <div style="display: flex; flex-direction: column; gap: 12px; font-weight: 500;">
+                        <p>Pessoa chega</p>
+                        <p>↓</p>
+                        <p>Entende a oferta</p>
+                        <p>↓</p>
+                        <p>Encontra uma ação clara</p>
+                        <p>↓</p>
+                        <p>Chega ao WhatsApp motivada</p>
+                        <p>↓</p>
+                        <p>Recebe atendimento estruturado</p>
+                        <p>↓</p>
+                        <p>Recebe follow-up</p>
+                        <p>↓</p>
+                        <p><strong style="color: #00BA4A;">Maior chance de avançar na compra</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6 e 7. PARA QUEM É / NÃO É -->
+    <section class="section" style="background-color: #F0F0F0;">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <h2 style="margin-bottom: 32px;">Esse Sprint é para você se…</h2>
+                    <ul class="list-check">
+                        <li>Você recebe mensagens, mas poucas viram vendas.</li>
+                        <li>Pessoas perguntam preço e desaparecem.</li>
+                        <li>Seu Instagram recebe visitas, mas quase ninguém chama.</li>
+                        <li>Você depende do WhatsApp para vender.</li>
+                        <li>Você sente que seu negócio poderia converter muito mais.</li>
+                        <li>Você não sabe exatamente onde está perdendo clientes.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 style="margin-bottom: 32px;">Não é para você se…</h2>
+                    <ul class="list-cross">
+                        <li>Você está procurando uma fórmula para ficar rico rapidamente.</li>
+                        <li>Você espera que a Puzzle garanta um número específico de vendas.</li>
+                        <li>Você não pretende implementar as melhorias recomendadas.</li>
+                        <li>Você procura apenas "posts bonitos" para o Instagram.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. COMO FUNCIONA -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 60px;">Como funciona</h2>
+            
+            <div class="grid-4">
+                <div class="card text-center">
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--border-color); margin-bottom: 16px;">01</div>
+                    <h3 style="font-size: 1.125rem;">Você compra o Sprint</h3>
+                </div>
+                <div class="card text-center">
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--border-color); margin-bottom: 16px;">02</div>
+                    <h3 style="font-size: 1.125rem;">Preenche o briefing</h3>
+                </div>
+                <div class="card text-center">
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--border-color); margin-bottom: 16px;">03</div>
+                    <h3 style="font-size: 1.125rem;">A Puzzle analisa seu negócio</h3>
+                </div>
+                <div class="card text-center" style="border-color: var(--neon-green);">
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--neon-green); margin-bottom: 16px;">04</div>
+                    <h3 style="font-size: 1.125rem;">Você recebe a entrega em até 48h</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. OFERTA -->
+    <section id="oferta" class="section">
+        <div class="container">
+            <div class="offer-box">
+                <h2>Pare de perder oportunidades que já estão chegando até você.</h2>
+                
+                <h3 style="margin-top: 40px; color: #888; font-weight: 500; font-size: 1.25rem;">Sprint WhatsApp que Vende</h3>
+                <div class="offer-price">R$297</div>
+                
+                <ul class="list-check">
+                    <li>Diagnóstico de conversão</li>
+                    <li>Estrutura de Oferta</li>
+                    <li>Roteiros para WhatsApp</li>
+                    <li>Sequência de Follow-up</li>
+                    <li>5 Conteúdos de venda</li>
+                    <li>Recomendações de conversão</li>
+                    <li><strong>Entrega em até 48h</strong></li>
+                </ul>
+                
+                <a href="https://wa.me/5527996189892?text=Ol%C3%A1!%20Gostaria%20de%20garantir%20meu%20Sprint%20WhatsApp%20que%20Vende." target="_blank" class="btn" style="width: 100%; max-width: 400px; margin-top: 24px;">Quero meu Sprint</a>
+                <span class="microcopy" style="color: #888;">Primeira rodada limitada a 10 clientes.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. GARANTIA / RISCO -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container text-center">
+            <div style="max-width: 700px; margin: 0 auto; padding: 32px; border: 1px dashed #ccc; border-radius: 8px;">
+                <h3 style="margin-bottom: 16px;">Você não está comprando promessa de faturamento.</h3>
+                <p class="text-muted" style="margin-bottom: 0;">O Sprint não promete clientes, faturamento ou números mágicos. Ele entrega uma análise profissional e uma estrutura prática para eliminar pontos de atrito na sua jornada de conversão, baseada na nossa expertise.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. FAQ -->
+    <section class="section" style="background-color: #F0F0F0;">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 40px;">Perguntas Frequentes</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <details>
+                    <summary>Preciso ter um site?</summary>
+                    <p>Não necessariamente. Avaliamos a estrutura que você possui atualmente, seja ela apenas Instagram e WhatsApp, ou com site e landing pages.</p>
+                </details>
+                
+                <details>
+                    <summary>Preciso investir em tráfego pago?</summary>
+                    <p>Não. O Sprint pode ser aplicado à sua estrutura orgânica. Tráfego pago pode ser contratado posteriormente, quando sua estrutura de conversão estiver sólida.</p>
+                </details>
+                
+                <details>
+                    <summary>Quanto tempo demora?</summary>
+                    <p>Até 48 horas após o recebimento das informações necessárias através do nosso briefing.</p>
+                </details>
+                
+                <details>
+                    <summary>Serve para qualquer negócio?</summary>
+                    <p>É especialmente indicado para negócios locais e prestadores de serviço que utilizam Instagram, Google e WhatsApp para gerar vendas (clínicas, estética, salões, restaurantes, academias, etc).</p>
+                </details>
+                
+                <details>
+                    <summary>Vocês fazem a implementação?</summary>
+                    <p>Sim. Dependendo da necessidade, a Puzzle pode oferecer serviços adicionais de implementação, como criação de Landing Pages, gestão de tráfego pago e automações.</p>
+                </details>
+                
+                <details>
+                    <summary>R$297 é um valor mensal?</summary>
+                    <p>Não. O Sprint é uma contratação pontual. Você paga uma única vez pela análise e entrega do plano de conversão.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. CTA FINAL -->
+    <section class="section text-center">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; max-width: 800px; margin: 0 auto 24px;">Quantas oportunidades você está perdendo sem perceber?</h2>
+            <p class="text-muted" style="font-size: 1.25rem; margin-bottom: 40px;">Descubra onde sua jornada de conversão está quebrando e o que fazer para corrigir.</p>
+            
+            <a href="https://wa.me/5527996189892?text=Ol%C3%A1!%20Gostaria%20de%20garantir%20meu%20Sprint%20WhatsApp%20que%20Vende." target="_blank" class="btn">Quero meu Sprint por R$297</a>
+        </div>
+    </section>
+
+    <!-- 13. RODAPÉ -->
+    <footer>
+        <div class="container">
+            <div class="logo">
+                Puzzle Studio <div class="logo-dot"></div>
+            </div>
+            <p style="font-weight: 500; color: white;">Conversão Digital</p>
+            <p style="margin-top: 16px;">"Transformamos atenção em oportunidades de venda."</p>
+            
+            <div class="footer-links">
+                <a href="https://instagram.com/puzzle.studioweb" target="_blank">Instagram</a>
+                <a href="https://wa.me/5527996189892" target="_blank">WhatsApp</a>
+                <a onclick="openModal('termosModal')">Termos de Uso</a>
+                <a onclick="openModal('privacidadeModal')">Política de Privacidade</a>
+            </div>
+            
+            <p style="margin-top: 40px; font-size: 0.875rem; color: #555;">&copy; 2026 Puzzle Studio. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL: TERMOS DE USO -->
+    <div id="termosModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('termosModal')">&times;</span>
+            <h2>Termos de Uso</h2>
+            <p><strong>Última atualização:</strong> 13 de agosto de 2026</p>
+            <p>Ao acessar o site da <strong>Puzzle Studio</strong> e contratar o serviço <strong>Sprint WhatsApp que Vende</strong>, você concorda com os presentes Termos de Uso. Leia com atenção antes de realizar sua compra.</p>
+            
+            <h3>1. O Serviço</h3>
+            <p>O <strong>Sprint WhatsApp que Vende</strong> é um serviço de diagnóstico e planejamento estratégico de conversão digital. O serviço inclui:</p>
+            <ul>
+                <li>Análise dos pontos de perda de clientes na jornada até o WhatsApp.</li>
+                <li>Entrega de uma estrutura de oferta, roteiros de atendimento, sequência de follow-up, 5 conteúdos de venda e recomendações práticas.</li>
+                <li><strong>Prazo de Entrega:</strong> O material será entregue em até <strong>48 horas úteis</strong> após o preenchimento completo e envio do formulário de briefing pelo cliente.</li>
+            </ul>
+
+            <h3>2. Obrigações do Cliente</h3>
+            <p>Para que a Puzzle Studio possa cumprir o prazo e a qualidade do serviço, o cliente deve:</p>
+            <ul>
+                <li>Fornecer informações precisas e completas no briefing.</li>
+                <li>Disponibilizar os links e acessos necessários para a análise (Instagram, site, etc.).</li>
+                <li>Compreender que o prazo de 48 horas só começa a contar <strong>após</strong> o recebimento de todas as informações solicitadas.</li>
+            </ul>
+
+            <h3>3. Ausência de Garantia de Resultados Financeiros</h3>
+            <p>A Puzzle Studio fornece direcionamento estratégico e análise baseada em boas práticas de conversão (CRO). <strong>Nós não garantimos resultados financeiros, aumento de faturamento, ou um número específico de clientes/vendas.</strong> O sucesso da estratégia depende exclusivamente da correta implementação, constância e qualidade do produto/serviço oferecido pelo cliente.</p>
+
+            <h3>4. Pagamento e Política de Reembolso</h3>
+            <ul>
+                <li>O valor do serviço é de <strong>R$ 297</strong>, cobrado em formato de contratação pontual (não é uma assinatura).</li>
+                <li><strong>Direito de Arrependimento:</strong> Conforme o Art. 49 do Código de Defesa do Consumidor, o cliente tem o prazo de 7 (sete) dias corridos, a contar da data da compra, para solicitar o cancelamento e reembolso integral, caso o serviço não atenda às expectativas.</li>
+                <li>Uma vez que a entrega do material seja realizada e aceita pelo cliente após os 7 dias, não haverá reembolso, dada a natureza do produto digital consumível e da prestação do serviço.</li>
+            </ul>
+
+            <h3>5. Propriedade Intelectual</h3>
+            <p>Todos os roteiros, templates, estratégias e materiais entregues durante o Sprint são de propriedade intelectual da Puzzle Studio, licenciados para o uso <strong>exclusivo e interno</strong> do negócio do cliente. É terminantemente proibida a revenda, distribuição, cópia ou reprodução destes materiais para terceiros.</p>
+
+            <h3>6. Modificações nos Termos</h3>
+            <p>A Puzzle Studio reserva-se o direito de alterar estes Termos de Uso a qualquer momento. Modificações entrarão em vigor imediatamente após a publicação no site.</p>
+
+            <h3>7. Contato e Foro</h3>
+            <p>Para dúvidas relacionadas a estes Termos, entre em contato via WhatsApp no número <strong>27 99618-9892</strong>.</p>
+            <p>Fica eleito o foro da comarca de <strong>Serra/ES</strong> para dirimir quaisquer controvérsias oriundas destes Termos.</p>
+        </div>
+    </div>
+
+    <!-- MODAL: POLÍTICA DE PRIVACIDADE -->
+    <div id="privacidadeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('privacidadeModal')">&times;</span>
+            <h2>Política de Privacidade</h2>
+            <p><strong>Última atualização:</strong> 13 de agosto de 2026</p>
+            <p>A <strong>Puzzle Studio</strong> valoriza a sua privacidade e está comprometida em proteger os seus dados pessoais. Esta Política de Privacidade explica como coletamos, usamos, compartilhamos e protegemos as informações dos visitantes do nosso site e clientes do <strong>Sprint WhatsApp que Vende</strong>.</p>
+
+            <h3>1. Dados que Coletamos</h3>
+            <p>Para fornecer nossos serviços e melhorar sua experiência, podemos coletar os seguintes dados:</p>
+            <ul>
+                <li><strong>Informações de Contato:</strong> Nome, e-mail e número de WhatsApp.</li>
+                <li><strong>Informações do Negócio:</strong> Dados fornecidos no briefing necessários para a execução do Sprint.</li>
+                <li><strong>Dados de Pagamento:</strong> Informações processadas por gateways de pagamento terceirizados (não armazenamos dados de cartão de crédito).</li>
+                <li><strong>Dados de Navegação:</strong> Endereço IP, tipo de navegador, páginas visitadas e tempo de permanência.</li>
+            </ul>
+
+            <h3>2. Como Usamos Seus Dados</h3>
+            <p>As informações coletadas são utilizadas exclusivamente para:</p>
+            <ul>
+                <li>Entregar o serviço contratado.</li>
+                <li>Comunicar sobre o andamento do serviço, entrega de materiais e follow-up.</li>
+                <li>Processar pagamentos e emitir notas fiscais.</li>
+                <li>Melhorar nossos serviços e cumprir obrigações legais.</li>
+            </ul>
+
+            <h3>3. Compartilhamento de Dados</h3>
+            <p><strong>Nós não vendemos ou alugamos seus dados pessoais.</strong> Podemos compartilhar suas informações apenas com Fornecedores de Serviços (hospedagem, pagamento) estritamente necessários, ou com Autoridades Legais quando exigido por lei.</p>
+
+            <h3>4. Seus Direitos (LGPD)</h3>
+            <p>De acordo com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você tem o direito de confirmar a existência de tratamento de dados, acessar, corrigir, solicitar a exclusão ou revogar o consentimento. Para exercer seus direitos, entre em contato conosco através do WhatsApp <strong>27 99618-9892</strong>.</p>
+
+            <h3>5. Segurança</h3>
+            <p>Implementamos medidas técnicas e organizacionais para proteger seus dados contra acessos não autorizados. No entanto, nenhuma transmissão pela internet é 100% segura, e o usuário reconhece esse risco inerente.</p>
+        </div>
+    </div>
+
+    <!-- Scripts para os Modais -->
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = 'block';
+            document.body.style.overflow = 'hidden'; // impede a rolagem da página de fundo
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+            document.body.style.overflow = 'auto'; // restaura a rolagem
+        }
+
+        // Fecha o modal se o usuário clicar na área escura (fora da caixa)
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = "none";
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
 </body>
- </html>
+</html>
+
